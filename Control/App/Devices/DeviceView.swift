@@ -8,16 +8,18 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct DeviceListView: View {
-    let store: Store<AppState, AppAction>
+struct DevicesView: View {
+    let appStore: Store<AppState, AppAction>
+    let store: Store<DevicesState, DevicesAction>
     
-    var simulators: [String] = ["a", "b", "c"]
     var body: some View {
         WithViewStore(store) { viewStore in
             switch viewStore.deviceList?.devices.values.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled } {
             case let .some(deviceValues):
-                List {
-                    ForEach(deviceValues, id: \.self) { device in
+                List(deviceValues) { device in
+                    NavigationLink(destination: selectedDashboard,
+                                   tag: device,
+                                   selection: viewStore.binding(get: { $0.selectedDevice }, send: { .selectDevice($0) })) {
                         HStack {
                             switch device.state {
                             case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
@@ -34,10 +36,25 @@ struct DeviceListView: View {
             }
         }
     }
+    
+    var selectedDashboard: some View {
+        WithViewStore(appStore) { viewStore in
+            Group {
+                switch viewStore.selectedSensor {
+                case .system: SystemView()
+                case .battery: BatteryView()
+                case .location: LocationView()
+                case .network: NetworkView()
+                case .screen: ScreenView()
+                }
+                Spacer()
+            }
+        }
+    }
 }
 
 struct Pocket: View {
-    let store: Store<AppState, AppAction>
+    let store: Store<DevicesState, DevicesAction>
 
     var body: some View {
         WithViewStore(store) { viewStore in
@@ -59,9 +76,9 @@ struct Pocket: View {
 }
 
 #if DEBUG
-struct DeviceListView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeviceListView(store: sampleControlViewReducer)
-    }
-}
+//struct DevicesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DevicesView(store: sampleControlViewReducer)
+//    }
+//}
 #endif

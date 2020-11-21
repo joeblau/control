@@ -11,22 +11,21 @@ import ComposableArchitecture
 struct DashboardView: View {
     let store: Store<AppState, AppAction>
     
-//    @State private var selectedState = 0
-//    let controlStates = ["System", "Battery", "Location", "Network", "Screen"]
-    
     var body: some View {
         WithViewStore(store) { viewStore in
             NavigationView {
-                DeviceListView(store: store)
-                Group {
-                    switch viewStore.selectedSensor {
-                    case .system: SystemView()
-                    case .battery: BatteryView()
-                    case .location: LocationView()
-                    case .network: NetworkView()
-                    case .screen: ScreenView()
+                DevicesView(appStore: store,
+                            store: store.scope(state: { $0.devicesState },
+                                               action: { AppAction.devicesAction($0) }))
+                .toolbar {
+                    ToolbarItem(placement: .navigation) {
+                        Button(action: {}) {
+                            Image(systemName: "power")
+                                .foregroundColor(.green)
+                        }
                     }
                 }
+                Text("Select Device")
                 .navigationTitle("")
                 .toolbar {
                     ToolbarItem(placement: .principal) {

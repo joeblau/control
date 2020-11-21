@@ -11,28 +11,22 @@
 		ED0BAAC625688BB700C8785E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0BAAC525688BB700C8785E /* Assets.xcassets */; };
 		ED0BAAC925688BB700C8785E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0BAAC825688BB700C8785E /* Preview Assets.xcassets */; };
 		ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAD325688C4200C8785E /* DashboardView.swift */; };
-		ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAD925688C6E00C8785E /* DeviceListView.swift */; };
+		ED0BAADA25688C6E00C8785E /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAD925688C6E00C8785E /* DeviceView.swift */; };
 		ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAE025688E3200C8785E /* SystemView.swift */; };
 		ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAE325688E3800C8785E /* BatteryView.swift */; };
 		ED0BAAE82568931D00C8785E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = ED0BAAE72568931D00C8785E /* ComposableArchitecture */; };
 		ED0BAAEC256893CB00C8785E /* ControlAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAEB256893CB00C8785E /* ControlAppReducer.swift */; };
 		ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */; };
 		ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */; };
-		ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E022568AD6B0088BF83 /* DeviceList.swift */; };
-		ED525E0A2568C4000088BF83 /* SelectedSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E092568C4000088BF83 /* SelectedSensor.swift */; };
 		ED525E122568C7090088BF83 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E112568C7090088BF83 /* LocationView.swift */; };
 		ED525E152568C7170088BF83 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E142568C7170088BF83 /* NetworkView.swift */; };
 		ED525E182568C7230088BF83 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E172568C7230088BF83 /* ScreenView.swift */; };
-		ED525E1B2568CD2B0088BF83 /* BatteryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E1A2568CD2B0088BF83 /* BatteryState.swift */; };
-		ED525E1E2568CEDF0088BF83 /* DataNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E1D2568CEDF0088BF83 /* DataNetwork.swift */; };
-		ED525E212568CEEE0088BF83 /* WifiBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E202568CEEE0088BF83 /* WifiBars.swift */; };
-		ED525E242568CF040088BF83 /* CellularMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E232568CF040088BF83 /* CellularMode.swift */; };
-		ED525E272568CF130088BF83 /* CellularBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E262568CF130088BF83 /* CellularBars.swift */; };
-		ED525E2B2568D0030088BF83 /* WifiMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E2A2568D0030088BF83 /* WifiMode.swift */; };
-		ED525E2E2568D9470088BF83 /* ImageFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E2D2568D9470088BF83 /* ImageFormat.swift */; };
-		ED525E312568D98C0088BF83 /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E302568D98C0088BF83 /* Mask.swift */; };
-		ED525E342568D9A50088BF83 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E332568D9A50088BF83 /* Display.swift */; };
-		ED525E372568D9B60088BF83 /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E362568D9B60088BF83 /* Codec.swift */; };
+		ED525E3B256950E90088BF83 /* DeviceViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E3A256950E90088BF83 /* DeviceViewReducer.swift */; };
+		ED525E442569512E0088BF83 /* ScreenViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E432569512E0088BF83 /* ScreenViewReducer.swift */; };
+		ED525E47256951350088BF83 /* NetworkViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E46256951350088BF83 /* NetworkViewReducer.swift */; };
+		ED525E4A2569513B0088BF83 /* LocationViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E492569513B0088BF83 /* LocationViewReducer.swift */; };
+		ED525E4D256951410088BF83 /* BatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4C256951410088BF83 /* BatteryViewReducer.swift */; };
+		ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,27 +37,21 @@
 		ED0BAACA25688BB700C8785E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0BAACB25688BB700C8785E /* Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Control.entitlements; sourceTree = "<group>"; };
 		ED0BAAD325688C4200C8785E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		ED0BAAD925688C6E00C8785E /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
+		ED0BAAD925688C6E00C8785E /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		ED0BAAE025688E3200C8785E /* SystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
 		ED0BAAE325688E3800C8785E /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		ED0BAAEB256893CB00C8785E /* ControlAppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlAppReducer.swift; path = ../../../control/Control/App/ControlAppReducer.swift; sourceTree = "<group>"; };
 		ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Process+Extensions.swift"; path = "../../../control/Control/Extensions/Process+Extensions.swift"; sourceTree = "<group>"; };
 		ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleControlViewReducer.swift; path = "../../../control/Control/Preview Content/SampleControlViewReducer.swift"; sourceTree = "<group>"; };
-		ED525E022568AD6B0088BF83 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
-		ED525E092568C4000088BF83 /* SelectedSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedSensor.swift; sourceTree = "<group>"; };
 		ED525E112568C7090088BF83 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		ED525E142568C7170088BF83 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		ED525E172568C7230088BF83 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
-		ED525E1A2568CD2B0088BF83 /* BatteryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryState.swift; sourceTree = "<group>"; };
-		ED525E1D2568CEDF0088BF83 /* DataNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNetwork.swift; sourceTree = "<group>"; };
-		ED525E202568CEEE0088BF83 /* WifiBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiBars.swift; sourceTree = "<group>"; };
-		ED525E232568CF040088BF83 /* CellularMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularMode.swift; sourceTree = "<group>"; };
-		ED525E262568CF130088BF83 /* CellularBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularBars.swift; sourceTree = "<group>"; };
-		ED525E2A2568D0030088BF83 /* WifiMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiMode.swift; sourceTree = "<group>"; };
-		ED525E2D2568D9470088BF83 /* ImageFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFormat.swift; sourceTree = "<group>"; };
-		ED525E302568D98C0088BF83 /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
-		ED525E332568D9A50088BF83 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
-		ED525E362568D9B60088BF83 /* Codec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codec.swift; sourceTree = "<group>"; };
+		ED525E3A256950E90088BF83 /* DeviceViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewReducer.swift; sourceTree = "<group>"; };
+		ED525E432569512E0088BF83 /* ScreenViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewReducer.swift; sourceTree = "<group>"; };
+		ED525E46256951350088BF83 /* NetworkViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewReducer.swift; sourceTree = "<group>"; };
+		ED525E492569513B0088BF83 /* LocationViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewReducer.swift; sourceTree = "<group>"; };
+		ED525E4C256951410088BF83 /* BatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewReducer.swift; sourceTree = "<group>"; };
+		ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +107,14 @@
 		ED0BAAD225688C2D00C8785E /* App */ = {
 			isa = PBXGroup;
 			children = (
-				ED71493C25689E1500F08D4F /* Dashboard */,
+				ED525E42256951070088BF83 /* Screen */,
+				ED525E41256950FE0088BF83 /* Network */,
+				ED525E40256950F90088BF83 /* Location */,
+				ED525E3F256950F60088BF83 /* Battery */,
+				ED525E3E256950EF0088BF83 /* System */,
+				ED0BAAD825688C6000C8785E /* Devices */,
 				ED0BAAC125688BB600C8785E /* ControlApp.swift */,
+				ED0BAAD325688C4200C8785E /* DashboardView.swift */,
 				ED0BAAEB256893CB00C8785E /* ControlAppReducer.swift */,
 			);
 			path = App;
@@ -129,23 +123,10 @@
 		ED0BAAD825688C6000C8785E /* Devices */ = {
 			isa = PBXGroup;
 			children = (
-				ED525E052568B15D0088BF83 /* -Models */,
-				ED0BAAD925688C6E00C8785E /* DeviceListView.swift */,
+				ED0BAAD925688C6E00C8785E /* DeviceView.swift */,
+				ED525E3A256950E90088BF83 /* DeviceViewReducer.swift */,
 			);
 			path = Devices;
-			sourceTree = "<group>";
-		};
-		ED0BAADF25688E2500C8785E /* Sensors */ = {
-			isa = PBXGroup;
-			children = (
-				ED525E082568C3F20088BF83 /* -Models */,
-				ED0BAAE025688E3200C8785E /* SystemView.swift */,
-				ED0BAAE325688E3800C8785E /* BatteryView.swift */,
-				ED525E112568C7090088BF83 /* LocationView.swift */,
-				ED525E142568C7170088BF83 /* NetworkView.swift */,
-				ED525E172568C7230088BF83 /* ScreenView.swift */,
-			);
-			path = Sensors;
 			sourceTree = "<group>";
 		};
 		ED0BAAEF2568946F00C8785E /* Extensions */ = {
@@ -156,40 +137,49 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		ED525E052568B15D0088BF83 /* -Models */ = {
+		ED525E3E256950EF0088BF83 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				ED525E022568AD6B0088BF83 /* DeviceList.swift */,
+				ED0BAAE025688E3200C8785E /* SystemView.swift */,
+				ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */,
 			);
-			path = "-Models";
+			path = System;
 			sourceTree = "<group>";
 		};
-		ED525E082568C3F20088BF83 /* -Models */ = {
+		ED525E3F256950F60088BF83 /* Battery */ = {
 			isa = PBXGroup;
 			children = (
-				ED525E092568C4000088BF83 /* SelectedSensor.swift */,
-				ED525E1A2568CD2B0088BF83 /* BatteryState.swift */,
-				ED525E1D2568CEDF0088BF83 /* DataNetwork.swift */,
-				ED525E202568CEEE0088BF83 /* WifiBars.swift */,
-				ED525E232568CF040088BF83 /* CellularMode.swift */,
-				ED525E262568CF130088BF83 /* CellularBars.swift */,
-				ED525E2A2568D0030088BF83 /* WifiMode.swift */,
-				ED525E2D2568D9470088BF83 /* ImageFormat.swift */,
-				ED525E302568D98C0088BF83 /* Mask.swift */,
-				ED525E332568D9A50088BF83 /* Display.swift */,
-				ED525E362568D9B60088BF83 /* Codec.swift */,
+				ED0BAAE325688E3800C8785E /* BatteryView.swift */,
+				ED525E4C256951410088BF83 /* BatteryViewReducer.swift */,
 			);
-			path = "-Models";
+			path = Battery;
 			sourceTree = "<group>";
 		};
-		ED71493C25689E1500F08D4F /* Dashboard */ = {
+		ED525E40256950F90088BF83 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				ED0BAAD325688C4200C8785E /* DashboardView.swift */,
-				ED0BAADF25688E2500C8785E /* Sensors */,
-				ED0BAAD825688C6000C8785E /* Devices */,
+				ED525E112568C7090088BF83 /* LocationView.swift */,
+				ED525E492569513B0088BF83 /* LocationViewReducer.swift */,
 			);
-			path = Dashboard;
+			path = Location;
+			sourceTree = "<group>";
+		};
+		ED525E41256950FE0088BF83 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ED525E142568C7170088BF83 /* NetworkView.swift */,
+				ED525E46256951350088BF83 /* NetworkViewReducer.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		ED525E42256951070088BF83 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ED525E172568C7230088BF83 /* ScreenView.swift */,
+				ED525E432569512E0088BF83 /* ScreenViewReducer.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,29 +257,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED525E372568D9B60088BF83 /* Codec.swift in Sources */,
 				ED0BAAEC256893CB00C8785E /* ControlAppReducer.swift in Sources */,
+				ED525E47256951350088BF83 /* NetworkViewReducer.swift in Sources */,
+				ED525E4D256951410088BF83 /* BatteryViewReducer.swift in Sources */,
+				ED525E4A2569513B0088BF83 /* LocationViewReducer.swift in Sources */,
 				ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */,
-				ED525E312568D98C0088BF83 /* Mask.swift in Sources */,
-				ED525E0A2568C4000088BF83 /* SelectedSensor.swift in Sources */,
-				ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */,
-				ED525E2E2568D9470088BF83 /* ImageFormat.swift in Sources */,
-				ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */,
+				ED525E3B256950E90088BF83 /* DeviceViewReducer.swift in Sources */,
+				ED525E442569512E0088BF83 /* ScreenViewReducer.swift in Sources */,
+				ED0BAADA25688C6E00C8785E /* DeviceView.swift in Sources */,
+				ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,
-				ED525E2B2568D0030088BF83 /* WifiMode.swift in Sources */,
 				ED525E122568C7090088BF83 /* LocationView.swift in Sources */,
-				ED525E272568CF130088BF83 /* CellularBars.swift in Sources */,
 				ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */,
 				ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */,
-				ED525E1E2568CEDF0088BF83 /* DataNetwork.swift in Sources */,
-				ED525E1B2568CD2B0088BF83 /* BatteryState.swift in Sources */,
 				ED525E152568C7170088BF83 /* NetworkView.swift in Sources */,
-				ED525E342568D9A50088BF83 /* Display.swift in Sources */,
 				ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */,
-				ED525E212568CEEE0088BF83 /* WifiBars.swift in Sources */,
 				ED525E182568C7230088BF83 /* ScreenView.swift in Sources */,
 				ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */,
-				ED525E242568CF040088BF83 /* CellularMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

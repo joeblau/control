@@ -35,30 +35,45 @@ struct SystemView: View {
     }
     
     var body: some View {
-        Form {
-            DatePicker("Date/Time:", selection: $wakeUp)
-            
-            Picker(selection: $selectedAppearance, label: Text("Appearance:")) {
-                ForEach(0..<appearances.count) { index in
-                    Text(appearances[index]).tag(index)
+        Group {
+            GroupBox(label: Text("Date/Time").font(.headline).padding(.bottom, 6)) {
+                Form {
+                    DatePicker("", selection: $wakeUp)
                 }
+                .padding()
             }
-            .pickerStyle(RadioGroupPickerStyle())
-            
-            Picker("Language:", selection: $language) {
-                ForEach(languages, id: \.self) {
-                    Text(NSLocale.current.localizedString(forLanguageCode: $0) ?? "")
+        
+            GroupBox(label: Text("Appearance").font(.headline).padding(.bottom, 6)) {
+                Form {
+                    Picker(selection: $selectedAppearance, label: Text("Mode:")) {
+                        ForEach(0..<appearances.count) { index in
+                            Text(appearances[index]).tag(index)
+                        }
+                    }
+                    .pickerStyle(RadioGroupPickerStyle())
+                    VStack {}.frame(maxWidth: .infinity)
+
                 }
+                .padding()
             }
             
-            Picker("Locale:", selection: $locale) {
-                ForEach(locales(for: language), id: \.self) {
-                    Text(NSLocale.current.localizedString(forIdentifier: $0) ?? "")
+            GroupBox(label: Text("Localization").font(.headline).padding(.bottom, 6)) {
+                Form {
+                    Picker("Language:", selection: $language) {
+                        ForEach(languages, id: \.self) {
+                            Text(NSLocale.current.localizedString(forLanguageCode: $0) ?? "")
+                        }
+                    }
+                    
+                    Picker("Locale:", selection: $locale) {
+                        ForEach(locales(for: language), id: \.self) {
+                            Text(NSLocale.current.localizedString(forIdentifier: $0) ?? "")
+                        }
+                    }
                 }
+                .padding()
             }
-            
             Spacer()
-            
         }
         .padding()
     }

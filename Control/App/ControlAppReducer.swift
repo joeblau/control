@@ -8,14 +8,26 @@
 import Foundation
 import ComposableArchitecture
 
+// MARK: - Models
+
+enum SelectedSensor: String, Equatable, CaseIterable {
+    case system = "System"
+    case battery = "Battery"
+    case location = "Location"
+    case network = "Network"
+    case screen = "Screen"
+}
+
+// MARK: - Composable
+
 struct AppState: Equatable {
-    var isDeviceFilterDisabled = true
-    var deviceList: DeviceList?
+    var devicesState = DevicesState()
+    
     var selectedSensor: SelectedSensor = .system
 }
 
 enum AppAction: Equatable {
-    case toggleFilter
+    case devicesAction(DevicesAction)
     
     case setSelectedSensor(SelectedSensor)
     
@@ -29,9 +41,6 @@ struct AppEnvironment {}
 let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, _ in
     
     switch action {
-    case .toggleFilter:
-        state.isDeviceFilterDisabled.toggle()
-        return .none
         
     case let .setSelectedSensor(selectedSensor):
         state.selectedSensor = selectedSensor
@@ -40,7 +49,7 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
     case .onActive:
         switch Process.execute("/usr/bin/xcrun", arguments: ["simctl", "list", "devices", "available", "-j"]) {
         case let .some(data):
-            state.deviceList = try? JSONDecoder().decode(DeviceList.self, from: data)
+            state.devicesState.deviceList = try? JSONDecoder().decode(DeviceList.self, from: data)
         case .none:
             print("error")
         }
@@ -50,3 +59,6 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
         return .none
     }
 }
+.combined(with: devicesReducer.pullback(state: \.devicesState,
+                                         action: /AppAction.devicesAction,
+                                         environment: { $0 }))
