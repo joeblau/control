@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct DashboardView: View {
+    let store: Store<AppState, AppAction>
+    
     @State private var selectedState = 0
     let controlStates = ["System", "Battery", "Location", "Network", "Screen"]
     
     var body: some View {
         NavigationView {
-            DeviceListView()
-
+            DeviceListView(store: store)
             SystemView()
                 .toolbar {
                     ToolbarItem(placement: .principal) {
@@ -30,8 +32,10 @@ struct DashboardView: View {
     }
 }
 
+#if DEBUG
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        DashboardView(store: sampleControlViewReducer)
     }
 }
+#endif

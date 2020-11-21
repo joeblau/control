@@ -15,6 +15,10 @@
 		ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAE025688E3200C8785E /* SystemView.swift */; };
 		ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAE325688E3800C8785E /* BatteryView.swift */; };
 		ED0BAAE82568931D00C8785E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = ED0BAAE72568931D00C8785E /* ComposableArchitecture */; };
+		ED0BAAEC256893CB00C8785E /* ControlAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAEB256893CB00C8785E /* ControlAppReducer.swift */; };
+		ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */; };
+		ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */; };
+		ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E022568AD6B0088BF83 /* DeviceList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		ED0BAAD925688C6E00C8785E /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 		ED0BAAE025688E3200C8785E /* SystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
 		ED0BAAE325688E3800C8785E /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
+		ED0BAAEB256893CB00C8785E /* ControlAppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlAppReducer.swift; path = ../../../control/Control/App/ControlAppReducer.swift; sourceTree = "<group>"; };
+		ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Process+Extensions.swift"; path = "../../../control/Control/Extensions/Process+Extensions.swift"; sourceTree = "<group>"; };
+		ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleControlViewReducer.swift; path = "../../../control/Control/Preview Content/SampleControlViewReducer.swift"; sourceTree = "<group>"; };
+		ED525E022568AD6B0088BF83 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 		ED0BAAC025688BB600C8785E /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				ED0BAAEF2568946F00C8785E /* Extensions */,
 				ED0BAAD225688C2D00C8785E /* App */,
 				ED0BAAC525688BB700C8785E /* Assets.xcassets */,
 				ED0BAACA25688BB700C8785E /* Info.plist */,
@@ -74,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				ED0BAAC825688BB700C8785E /* Preview Assets.xcassets */,
+				ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -81,10 +91,9 @@
 		ED0BAAD225688C2D00C8785E /* App */ = {
 			isa = PBXGroup;
 			children = (
-				ED0BAADF25688E2500C8785E /* States */,
-				ED0BAAD825688C6000C8785E /* Devices */,
+				ED71493C25689E1500F08D4F /* Dashboard */,
 				ED0BAAC125688BB600C8785E /* ControlApp.swift */,
-				ED0BAAD325688C4200C8785E /* DashboardView.swift */,
+				ED0BAAEB256893CB00C8785E /* ControlAppReducer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -92,18 +101,45 @@
 		ED0BAAD825688C6000C8785E /* Devices */ = {
 			isa = PBXGroup;
 			children = (
+				ED525E052568B15D0088BF83 /* -Models */,
 				ED0BAAD925688C6E00C8785E /* DeviceListView.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
 		};
-		ED0BAADF25688E2500C8785E /* States */ = {
+		ED0BAADF25688E2500C8785E /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
 				ED0BAAE025688E3200C8785E /* SystemView.swift */,
 				ED0BAAE325688E3800C8785E /* BatteryView.swift */,
 			);
-			path = States;
+			path = Sensors;
+			sourceTree = "<group>";
+		};
+		ED0BAAEF2568946F00C8785E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED525E052568B15D0088BF83 /* -Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED525E022568AD6B0088BF83 /* DeviceList.swift */,
+			);
+			path = "-Models";
+			sourceTree = "<group>";
+		};
+		ED71493C25689E1500F08D4F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				ED0BAAD325688C4200C8785E /* DashboardView.swift */,
+				ED0BAADF25688E2500C8785E /* Sensors */,
+				ED0BAAD825688C6000C8785E /* Devices */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,11 +217,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0BAAEC256893CB00C8785E /* ControlAppReducer.swift in Sources */,
+				ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */,
+				ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */,
 				ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,
 				ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */,
 				ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */,
 				ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */,
+				ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
