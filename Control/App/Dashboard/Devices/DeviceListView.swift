@@ -17,7 +17,7 @@ struct DeviceListView: View {
             switch viewStore.deviceList?.devices.values {
             case let .some(deviceValues):
                 List {
-                    ForEach(deviceValues.flatMap { $0 }, id: \.self) { device in
+                    ForEach(deviceValues.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled }, id: \.self) { device in
                         HStack {
                             switch device.state {
                             case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
@@ -44,8 +44,8 @@ struct Pocket: View {
             VStack(alignment: .leading, spacing: 0) {
                 Divider()
                 Button(action: {}) {
-                    Toggle(isOn: viewStore.binding(get: { $0.isDeviceFilterEnabled }, send: .toggleFilter), label: {
-                        Label("Filter active devices", systemImage: "power")
+                    Toggle(isOn: viewStore.binding(get: { !$0.isDeviceFilterDisabled }, send: .toggleFilter), label: {
+                        Label("Filter booted devices", systemImage: "power")
                             .padding(6)
                             .contentShape(Rectangle())
                     })

@@ -9,7 +9,7 @@ import Foundation
 import ComposableArchitecture
 
 struct AppState: Equatable {
-    var isDeviceFilterEnabled = false
+    var isDeviceFilterDisabled = true
     var deviceList: DeviceList?
 }
 
@@ -27,17 +27,18 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
     
     switch action {
     case .toggleFilter:
-        state.isDeviceFilterEnabled.toggle()
+        state.isDeviceFilterDisabled.toggle()
         return .none
+        
     case .onActive:
         switch Process.execute("/usr/bin/xcrun", arguments: ["simctl", "list", "devices", "available", "-j"]) {
         case let .some(data):
-            let deviceList = try? JSONDecoder().decode(DeviceList.self, from: data)
-            state.deviceList = deviceList
+            state.deviceList = try? JSONDecoder().decode(DeviceList.self, from: data)
         case .none:
             print("error")
         }
         return .none
+        
     default:
         return .none
     }
