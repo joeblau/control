@@ -20,6 +20,9 @@
 		ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */; };
 		ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E022568AD6B0088BF83 /* DeviceList.swift */; };
 		ED525E0A2568C4000088BF83 /* SelectedSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E092568C4000088BF83 /* SelectedSensor.swift */; };
+		ED525E122568C7090088BF83 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E112568C7090088BF83 /* LocationView.swift */; };
+		ED525E152568C7170088BF83 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E142568C7170088BF83 /* NetworkView.swift */; };
+		ED525E182568C7230088BF83 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E172568C7230088BF83 /* ScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleControlViewReducer.swift; path = "../../../control/Control/Preview Content/SampleControlViewReducer.swift"; sourceTree = "<group>"; };
 		ED525E022568AD6B0088BF83 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		ED525E092568C4000088BF83 /* SelectedSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedSensor.swift; sourceTree = "<group>"; };
+		ED525E112568C7090088BF83 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		ED525E142568C7170088BF83 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
+		ED525E172568C7230088BF83 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 				ED525E082568C3F20088BF83 /* -Models */,
 				ED0BAAE025688E3200C8785E /* SystemView.swift */,
 				ED0BAAE325688E3800C8785E /* BatteryView.swift */,
+				ED525E112568C7090088BF83 /* LocationView.swift */,
+				ED525E142568C7170088BF83 /* NetworkView.swift */,
+				ED525E172568C7230088BF83 /* ScreenView.swift */,
 			);
 			path = Sensors;
 			sourceTree = "<group>";
@@ -234,9 +243,12 @@
 				ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */,
 				ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,
+				ED525E122568C7090088BF83 /* LocationView.swift in Sources */,
 				ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */,
 				ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */,
+				ED525E152568C7170088BF83 /* NetworkView.swift in Sources */,
 				ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */,
+				ED525E182568C7230088BF83 /* ScreenView.swift in Sources */,
 				ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

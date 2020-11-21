@@ -1,5 +1,5 @@
 //
-//  BatteryView.swift
+//  ScreenView.swift
 //  Control
 //
 //  Created by Joe Blau on 11/20/20.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct BatteryView: View {
+struct ScreenView: View {
     var body: some View {
-        Text("Battery")
+        Text("Screen")
     }
 }
 
-struct BatteryView_Previews: PreviewProvider {
+struct ScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        BatteryView()
+        ScreenView()
     }
 }

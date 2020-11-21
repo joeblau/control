@@ -1,5 +1,5 @@
 //
-//  BatteryView.swift
+//  NetworkView.swift
 //  Control
 //
 //  Created by Joe Blau on 11/20/20.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct BatteryView: View {
+struct NetworkView: View {
     var body: some View {
-        Text("Battery")
+        Text("Network")
     }
 }
 
-struct BatteryView_Previews: PreviewProvider {
+struct NetworkView_Previews: PreviewProvider {
     static var previews: some View {
-        BatteryView()
+        NetworkView()
     }
 }

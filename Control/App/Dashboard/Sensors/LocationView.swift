@@ -1,5 +1,5 @@
 //
-//  BatteryView.swift
+//  LocationView.swift
 //  Control
 //
 //  Created by Joe Blau on 11/20/20.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct BatteryView: View {
+struct LocationView: View {
     var body: some View {
-        Text("Battery")
+        Text("Location")
     }
 }
 
-struct BatteryView_Previews: PreviewProvider {
+struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        BatteryView()
+        LocationView()
     }
 }

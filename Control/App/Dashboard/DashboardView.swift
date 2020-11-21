@@ -22,11 +22,12 @@ struct DashboardView: View {
                     switch viewStore.selectedSensor {
                     case .system: SystemView()
                     case .battery: BatteryView()
-                    case .location: SystemView()
-                    case .network: SystemView()
-                    case .screen: SystemView()
+                    case .location: LocationView()
+                    case .network: NetworkView()
+                    case .screen: ScreenView()
                     }
                 }
+                .navigationTitle("")
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Picker(selection: viewStore.binding(get: { $0.selectedSensor }, send: { .setSelectedSensor($0) }), label: Text("")) {
