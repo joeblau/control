@@ -23,6 +23,16 @@
 		ED525E122568C7090088BF83 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E112568C7090088BF83 /* LocationView.swift */; };
 		ED525E152568C7170088BF83 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E142568C7170088BF83 /* NetworkView.swift */; };
 		ED525E182568C7230088BF83 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E172568C7230088BF83 /* ScreenView.swift */; };
+		ED525E1B2568CD2B0088BF83 /* BatteryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E1A2568CD2B0088BF83 /* BatteryState.swift */; };
+		ED525E1E2568CEDF0088BF83 /* DataNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E1D2568CEDF0088BF83 /* DataNetwork.swift */; };
+		ED525E212568CEEE0088BF83 /* WifiBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E202568CEEE0088BF83 /* WifiBars.swift */; };
+		ED525E242568CF040088BF83 /* CellularMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E232568CF040088BF83 /* CellularMode.swift */; };
+		ED525E272568CF130088BF83 /* CellularBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E262568CF130088BF83 /* CellularBars.swift */; };
+		ED525E2B2568D0030088BF83 /* WifiMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E2A2568D0030088BF83 /* WifiMode.swift */; };
+		ED525E2E2568D9470088BF83 /* ImageFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E2D2568D9470088BF83 /* ImageFormat.swift */; };
+		ED525E312568D98C0088BF83 /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E302568D98C0088BF83 /* Mask.swift */; };
+		ED525E342568D9A50088BF83 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E332568D9A50088BF83 /* Display.swift */; };
+		ED525E372568D9B60088BF83 /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E362568D9B60088BF83 /* Codec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +54,16 @@
 		ED525E112568C7090088BF83 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		ED525E142568C7170088BF83 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		ED525E172568C7230088BF83 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		ED525E1A2568CD2B0088BF83 /* BatteryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryState.swift; sourceTree = "<group>"; };
+		ED525E1D2568CEDF0088BF83 /* DataNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNetwork.swift; sourceTree = "<group>"; };
+		ED525E202568CEEE0088BF83 /* WifiBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiBars.swift; sourceTree = "<group>"; };
+		ED525E232568CF040088BF83 /* CellularMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularMode.swift; sourceTree = "<group>"; };
+		ED525E262568CF130088BF83 /* CellularBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularBars.swift; sourceTree = "<group>"; };
+		ED525E2A2568D0030088BF83 /* WifiMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiMode.swift; sourceTree = "<group>"; };
+		ED525E2D2568D9470088BF83 /* ImageFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFormat.swift; sourceTree = "<group>"; };
+		ED525E302568D98C0088BF83 /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
+		ED525E332568D9A50088BF83 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		ED525E362568D9B60088BF83 /* Codec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +168,16 @@
 			isa = PBXGroup;
 			children = (
 				ED525E092568C4000088BF83 /* SelectedSensor.swift */,
+				ED525E1A2568CD2B0088BF83 /* BatteryState.swift */,
+				ED525E1D2568CEDF0088BF83 /* DataNetwork.swift */,
+				ED525E202568CEEE0088BF83 /* WifiBars.swift */,
+				ED525E232568CF040088BF83 /* CellularMode.swift */,
+				ED525E262568CF130088BF83 /* CellularBars.swift */,
+				ED525E2A2568D0030088BF83 /* WifiMode.swift */,
+				ED525E2D2568D9470088BF83 /* ImageFormat.swift */,
+				ED525E302568D98C0088BF83 /* Mask.swift */,
+				ED525E332568D9A50088BF83 /* Display.swift */,
+				ED525E362568D9B60088BF83 /* Codec.swift */,
 			);
 			path = "-Models";
 			sourceTree = "<group>";
@@ -237,19 +267,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED525E372568D9B60088BF83 /* Codec.swift in Sources */,
 				ED0BAAEC256893CB00C8785E /* ControlAppReducer.swift in Sources */,
 				ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */,
+				ED525E312568D98C0088BF83 /* Mask.swift in Sources */,
 				ED525E0A2568C4000088BF83 /* SelectedSensor.swift in Sources */,
 				ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */,
+				ED525E2E2568D9470088BF83 /* ImageFormat.swift in Sources */,
 				ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,
+				ED525E2B2568D0030088BF83 /* WifiMode.swift in Sources */,
 				ED525E122568C7090088BF83 /* LocationView.swift in Sources */,
+				ED525E272568CF130088BF83 /* CellularBars.swift in Sources */,
 				ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */,
 				ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */,
+				ED525E1E2568CEDF0088BF83 /* DataNetwork.swift in Sources */,
+				ED525E1B2568CD2B0088BF83 /* BatteryState.swift in Sources */,
 				ED525E152568C7170088BF83 /* NetworkView.swift in Sources */,
+				ED525E342568D9A50088BF83 /* Display.swift in Sources */,
 				ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */,
+				ED525E212568CEEE0088BF83 /* WifiBars.swift in Sources */,
 				ED525E182568C7230088BF83 /* ScreenView.swift in Sources */,
 				ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */,
+				ED525E242568CF040088BF83 /* CellularMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
