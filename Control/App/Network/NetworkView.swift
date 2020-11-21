@@ -42,8 +42,7 @@ struct NetworkView: View {
 
                     Picker("Signal:", selection: $wiFiBar) {
                         ForEach(WifiBars.allCases) { bars in
-                            Image(nsImage: self.nsimage(named: "wifi.\(bars.rawValue)", size: NSSize(width: 19, height: 13.8)))
-                                .tag(bars)
+                            Image("wifi.\(bars.rawValue)").tag(bars)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -59,8 +58,7 @@ struct NetworkView: View {
 
                 Picker("Signal:", selection: $cellularBar) {
                     ForEach(CellularBars.allCases) { bars in
-                        Image(nsImage: self.nsimage(named: "cell.\(bars.rawValue)", size: NSSize(width: 21, height: 11.4)))
-                            .tag(bars)
+                        Image("cell.\(bars.rawValue)").tag(bars)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -70,14 +68,6 @@ struct NetworkView: View {
             Spacer()
         }
         .padding()
-    }
-    
-    private func nsimage(named name: String, size: NSSize) -> NSImage {
-        guard let image = NSImage(named: name) else {
-            return NSImage()
-        }
-        image.size = size
-        return image
     }
 }
 

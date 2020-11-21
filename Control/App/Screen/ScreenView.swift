@@ -43,6 +43,7 @@ struct ScreenView: View {
                 }
                 .padding()
             }
+            Spacer()
         }
         .padding()
     }

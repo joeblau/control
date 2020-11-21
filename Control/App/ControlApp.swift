@@ -18,7 +18,7 @@ struct ControlApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DashboardView(store: store)
+            ControlAppView(store: store)
                 .onChange(of: scenePhase) { phase in
                     switch phase {
                     case .background:

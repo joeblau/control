@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct DashboardView: View {
+struct ControlAppView: View {
     let store: Store<AppState, AppAction>
     
     var body: some View {
@@ -17,6 +17,7 @@ struct DashboardView: View {
                 DevicesView(appStore: store,
                             store: store.scope(state: { $0.devicesState },
                                                action: { AppAction.devicesAction($0) }))
+                    .frame(minWidth: 250, idealWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
                         Button(action: {}) {
@@ -26,7 +27,7 @@ struct DashboardView: View {
                     }
                 }
                 Text("Select Device")
-                .navigationTitle("")
+                .frame(minWidth: 550, idealWidth: 800, maxWidth: .infinity, maxHeight: .infinity)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Picker(selection: viewStore.binding(get: { $0.selectedSensor }, send: { .setSelectedSensor($0) }), label: Text("")) {
@@ -43,9 +44,9 @@ struct DashboardView: View {
 }
 
 #if DEBUG
-struct DashboardView_Previews: PreviewProvider {
+struct ControlAppView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView(store: sampleControlViewReducer)
+        ControlAppView(store: sampleControlViewReducer)
     }
 }
 #endif

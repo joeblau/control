@@ -47,7 +47,6 @@ struct DevicesView: View {
                 case .network: NetworkView()
                 case .screen: ScreenView()
                 }
-                Spacer()
             }
         }
     }

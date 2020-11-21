@@ -51,7 +51,7 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
         case let .some(data):
             state.devicesState.deviceList = try? JSONDecoder().decode(DeviceList.self, from: data)
         case .none:
-            print("error")
+            break
         }
         return .none
         

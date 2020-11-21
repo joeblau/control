@@ -38,7 +38,11 @@ struct SystemView: View {
         Group {
             GroupBox(label: Text("Date/Time").font(.headline).padding(.bottom, 6)) {
                 Form {
-                    DatePicker("", selection: $wakeUp)
+                    DatePicker("Set:", selection: $wakeUp)
+                    
+                    Button(action: {}) {
+                        Text("Set to 9:41")
+                    }
                 }
                 .padding()
             }
