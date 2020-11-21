@@ -20,10 +20,10 @@ struct DeviceListView: View {
                     ForEach(deviceValues.flatMap { $0 }, id: \.self) { device in
                         HStack {
                             switch device.state {
-                            case .booted: Image(systemName: "circle.fill").foregroundColor(.green)
-                            default: Image(systemName: "circle").foregroundColor(.gray)
+                            case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
+                            default: Image(systemName: "circlebadge").foregroundColor(.gray)
                             }
-                            Text(device.name)
+                            Label(device.name, systemImage: device.type.rawValue)
                         }
                     }
                 }

@@ -16,6 +16,13 @@ enum DeviceState: String, Codable, Equatable {
     case shutdown = "Shutdown"
 }
 
+enum DeviceType: String {
+    case iPad = "ipad"
+    case iPhone = "iphone"
+    case watch = "applewatch"
+    case tv = "appletv"
+}
+
 struct DeviceList: Codable, Equatable, Hashable {
     var devices: [String: [Device]] = [String: [Device]]()
 }
@@ -30,3 +37,13 @@ struct Device: Codable, Equatable, Hashable {
     var name: String
 }
 
+extension Device {
+    var type: DeviceType {
+        switch true {
+        case deviceTypeIdentifier?.contains("iPad"): return .iPad
+        case deviceTypeIdentifier?.contains("Watch"): return .watch
+        case deviceTypeIdentifier?.contains("TV"): return .tv
+        default: return .iPhone
+        }
+    }
+}
