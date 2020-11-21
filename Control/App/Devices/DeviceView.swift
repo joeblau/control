@@ -61,7 +61,7 @@ struct Pocket: View {
                 Divider()
                 Button(action: {}) {
                     Toggle(isOn: viewStore.binding(get: { !$0.isDeviceFilterDisabled }, send: .toggleFilter), label: {
-                        Label("Filter booted devices", systemImage: "power")
+                        Label("Filter booted devices", systemImage: "line.horizontal.3.decrease")
                             .padding(6)
                             .contentShape(Rectangle())
                     })
