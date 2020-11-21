@@ -29,12 +29,13 @@ struct ControlAppView: View {
                 Text("Select Device")
                 .frame(minWidth: 550, idealWidth: 800, maxWidth: .infinity, maxHeight: .infinity)
                 .toolbar {
-                    ToolbarItem(placement: .principal) {
+                    ToolbarItem(placement: .navigation) {
                         Picker(selection: viewStore.binding(get: { $0.selectedSensor }, send: { .setSelectedSensor($0) }), label: Text("")) {
-                            ForEach(0..<SelectedSensor.allCases.count) { index in
-                                Text(SelectedSensor.allCases[index].rawValue).tag(SelectedSensor.allCases[index])
+                            ForEach(SelectedSensor.allCases) { sensor in
+                                Image(systemName: sensor.rawValue).tag(sensor)
                             }
-                        }.pickerStyle(SegmentedPickerStyle())
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
                     }
                 }
             }

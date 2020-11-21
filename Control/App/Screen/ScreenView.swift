@@ -46,6 +46,7 @@ struct ScreenView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("Screen")
     }
 }
 

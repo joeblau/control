@@ -80,6 +80,7 @@ struct SystemView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("System")
     }
 }
 

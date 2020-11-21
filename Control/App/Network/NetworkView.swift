@@ -68,6 +68,7 @@ struct NetworkView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("Network")
     }
 }
 

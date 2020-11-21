@@ -37,6 +37,7 @@ struct BatteryView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("Battery")
     }
     
     /// Triggered when the user adjusts the battery level.

@@ -7,15 +7,18 @@
 
 import Foundation
 import ComposableArchitecture
+import AppKit
 
 // MARK: - Models
 
-enum SelectedSensor: String, Equatable, CaseIterable {
-    case system = "System"
-    case battery = "Battery"
-    case location = "Location"
-    case network = "Network"
-    case screen = "Screen"
+enum SelectedSensor: String, Equatable, CaseIterable, Identifiable {
+    var id: Self { self }
+
+    case system = "gearshape"
+    case battery = "minus.plus.batteryblock"
+    case location = "location"
+    case network = "network"
+    case screen = "display"
 }
 
 // MARK: - Composable
