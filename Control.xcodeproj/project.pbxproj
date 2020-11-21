@@ -19,6 +19,7 @@
 		ED0BAAFC256895CC00C8785E /* Process+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */; };
 		ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */; };
 		ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E022568AD6B0088BF83 /* DeviceList.swift */; };
+		ED525E0A2568C4000088BF83 /* SelectedSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E092568C4000088BF83 /* SelectedSensor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ED0BAAFB256895CC00C8785E /* Process+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Process+Extensions.swift"; path = "../../../control/Control/Extensions/Process+Extensions.swift"; sourceTree = "<group>"; };
 		ED0BAB00256897F800C8785E /* SampleControlViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleControlViewReducer.swift; path = "../../../control/Control/Preview Content/SampleControlViewReducer.swift"; sourceTree = "<group>"; };
 		ED525E022568AD6B0088BF83 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		ED525E092568C4000088BF83 /* SelectedSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedSensor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		ED0BAADF25688E2500C8785E /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
+				ED525E082568C3F20088BF83 /* -Models */,
 				ED0BAAE025688E3200C8785E /* SystemView.swift */,
 				ED0BAAE325688E3800C8785E /* BatteryView.swift */,
 			);
@@ -128,6 +131,14 @@
 			isa = PBXGroup;
 			children = (
 				ED525E022568AD6B0088BF83 /* DeviceList.swift */,
+			);
+			path = "-Models";
+			sourceTree = "<group>";
+		};
+		ED525E082568C3F20088BF83 /* -Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED525E092568C4000088BF83 /* SelectedSensor.swift */,
 			);
 			path = "-Models";
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 			files = (
 				ED0BAAEC256893CB00C8785E /* ControlAppReducer.swift in Sources */,
 				ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */,
+				ED525E0A2568C4000088BF83 /* SelectedSensor.swift in Sources */,
 				ED525E032568AD6B0088BF83 /* DeviceList.swift in Sources */,
 				ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,

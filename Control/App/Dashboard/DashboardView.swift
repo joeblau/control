@@ -11,24 +11,34 @@ import ComposableArchitecture
 struct DashboardView: View {
     let store: Store<AppState, AppAction>
     
-    @State private var selectedState = 0
-    let controlStates = ["System", "Battery", "Location", "Network", "Screen"]
+//    @State private var selectedState = 0
+//    let controlStates = ["System", "Battery", "Location", "Network", "Screen"]
     
     var body: some View {
-        NavigationView {
-            DeviceListView(store: store)
-            SystemView()
+        WithViewStore(store) { viewStore in
+            NavigationView {
+                DeviceListView(store: store)
+                Group {
+                    switch viewStore.selectedSensor {
+                    case .system: SystemView()
+                    case .battery: BatteryView()
+                    case .location: SystemView()
+                    case .network: SystemView()
+                    case .screen: SystemView()
+                    }
+                }
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Picker(selection: $selectedState, label: Text("What is your favorite color?")) {
-                            ForEach(0..<controlStates.count) { index in
-                                Text(self.controlStates[index]).tag(index)
+                        Picker(selection: viewStore.binding(get: { $0.selectedSensor }, send: { .setSelectedSensor($0) }), label: Text("")) {
+                            ForEach(0..<SelectedSensor.allCases.count) { index in
+                                Text(SelectedSensor.allCases[index].rawValue).tag(SelectedSensor.allCases[index])
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                     }
                 }
+            }
+            .navigationViewStyle(DefaultNavigationViewStyle())
         }
-        .navigationViewStyle(DefaultNavigationViewStyle())
     }
 }
 

@@ -11,10 +11,13 @@ import ComposableArchitecture
 struct AppState: Equatable {
     var isDeviceFilterDisabled = true
     var deviceList: DeviceList?
+    var selectedSensor: SelectedSensor = .system
 }
 
 enum AppAction: Equatable {
     case toggleFilter
+    
+    case setSelectedSensor(SelectedSensor)
     
     case onBackground
     case onInactive
@@ -28,6 +31,10 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
     switch action {
     case .toggleFilter:
         state.isDeviceFilterDisabled.toggle()
+        return .none
+        
+    case let .setSelectedSensor(selectedSensor):
+        state.selectedSensor = selectedSensor
         return .none
         
     case .onActive:

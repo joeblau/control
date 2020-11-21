@@ -14,10 +14,10 @@ struct DeviceListView: View {
     var simulators: [String] = ["a", "b", "c"]
     var body: some View {
         WithViewStore(store) { viewStore in
-            switch viewStore.deviceList?.devices.values {
+            switch viewStore.deviceList?.devices.values.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled } {
             case let .some(deviceValues):
                 List {
-                    ForEach(deviceValues.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled }, id: \.self) { device in
+                    ForEach(deviceValues, id: \.self) { device in
                         HStack {
                             switch device.state {
                             case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
