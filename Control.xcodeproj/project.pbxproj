@@ -8,19 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAC125688BB600C8785E /* ControlApp.swift */; };
-		ED0BAAC425688BB600C8785E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAC325688BB600C8785E /* ContentView.swift */; };
 		ED0BAAC625688BB700C8785E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0BAAC525688BB700C8785E /* Assets.xcassets */; };
 		ED0BAAC925688BB700C8785E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0BAAC825688BB700C8785E /* Preview Assets.xcassets */; };
+		ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAD325688C4200C8785E /* DashboardView.swift */; };
+		ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAD925688C6E00C8785E /* DeviceListView.swift */; };
+		ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAE025688E3200C8785E /* SystemView.swift */; };
+		ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BAAE325688E3800C8785E /* BatteryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED0BAABE25688BB600C8785E /* Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Control.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0BAAC125688BB600C8785E /* ControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlApp.swift; sourceTree = "<group>"; };
-		ED0BAAC325688BB600C8785E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED0BAAC525688BB700C8785E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED0BAAC825688BB700C8785E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED0BAACA25688BB700C8785E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0BAACB25688BB700C8785E /* Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Control.entitlements; sourceTree = "<group>"; };
+		ED0BAAD325688C4200C8785E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		ED0BAAD925688C6E00C8785E /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
+		ED0BAAE025688E3200C8785E /* SystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
+		ED0BAAE325688E3800C8785E /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +59,7 @@
 		ED0BAAC025688BB600C8785E /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				ED0BAAC125688BB600C8785E /* ControlApp.swift */,
-				ED0BAAC325688BB600C8785E /* ContentView.swift */,
+				ED0BAAD225688C2D00C8785E /* App */,
 				ED0BAAC525688BB700C8785E /* Assets.xcassets */,
 				ED0BAACA25688BB700C8785E /* Info.plist */,
 				ED0BAACB25688BB700C8785E /* Control.entitlements */,
@@ -69,6 +74,34 @@
 				ED0BAAC825688BB700C8785E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ED0BAAD225688C2D00C8785E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ED0BAADF25688E2500C8785E /* States */,
+				ED0BAAD825688C6000C8785E /* Devices */,
+				ED0BAAC125688BB600C8785E /* ControlApp.swift */,
+				ED0BAAD325688C4200C8785E /* DashboardView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		ED0BAAD825688C6000C8785E /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				ED0BAAD925688C6E00C8785E /* DeviceListView.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		ED0BAADF25688E2500C8785E /* States */ = {
+			isa = PBXGroup;
+			children = (
+				ED0BAAE025688E3200C8785E /* SystemView.swift */,
+				ED0BAAE325688E3800C8785E /* BatteryView.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED0BAAC425688BB600C8785E /* ContentView.swift in Sources */,
+				ED0BAADA25688C6E00C8785E /* DeviceListView.swift in Sources */,
+				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,
+				ED0BAAD425688C4200C8785E /* DashboardView.swift in Sources */,
 				ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */,
+				ED0BAAE125688E3200C8785E /* SystemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
