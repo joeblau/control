@@ -27,6 +27,7 @@
 		ED525E4A2569513B0088BF83 /* LocationViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E492569513B0088BF83 /* LocationViewReducer.swift */; };
 		ED525E4D256951410088BF83 /* BatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4C256951410088BF83 /* BatteryViewReducer.swift */; };
 		ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */; };
+		ED5689982569D87A005D4D17 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5689972569D87A005D4D17 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		ED525E492569513B0088BF83 /* LocationViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewReducer.swift; sourceTree = "<group>"; };
 		ED525E4C256951410088BF83 /* BatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewReducer.swift; sourceTree = "<group>"; };
 		ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewReducer.swift; sourceTree = "<group>"; };
+		ED5689972569D87A005D4D17 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		ED0BAAC025688BB600C8785E /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				ED5689972569D87A005D4D17 /* Constant.swift */,
 				ED0BAAEF2568946F00C8785E /* Extensions */,
 				ED0BAAD225688C2D00C8785E /* App */,
 				ED0BAAC525688BB700C8785E /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,
 				ED525E122568C7090088BF83 /* LocationView.swift in Sources */,
+				ED5689982569D87A005D4D17 /* Constant.swift in Sources */,
 				ED0BAAD425688C4200C8785E /* ControlAppView.swift in Sources */,
 				ED0BAAC225688BB600C8785E /* ControlApp.swift in Sources */,
 				ED525E152568C7170088BF83 /* NetworkView.swift in Sources */,

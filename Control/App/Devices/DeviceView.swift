@@ -41,7 +41,8 @@ struct DevicesView: View {
         WithViewStore(appStore) { viewStore in
             Group {
                 switch viewStore.selectedSensor {
-                case .system: SystemView()
+                case .system: SystemView(store: appStore.scope(state: { $0.systemState },
+                                                               action: { .systemAction($0) }))
                 case .battery: BatteryView()
                 case .location: LocationView()
                 case .network: NetworkView()

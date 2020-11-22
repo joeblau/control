@@ -19,7 +19,10 @@ struct ControlAppView: View {
                                                action: { AppAction.devicesAction($0) }))
                     .frame(minWidth: 250, idealWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
                 .toolbar {
-                    ToolbarItem(placement: .navigation) {
+                    ToolbarItem(placement: .automatic) {
+                        Spacer()
+                    }
+                    ToolbarItem(placement: .automatic) {
                         Button(action: {}) {
                             Image(systemName: "power")
                                 .foregroundColor(.green)
@@ -30,8 +33,8 @@ struct ControlAppView: View {
                 .frame(minWidth: 550, idealWidth: 800, maxWidth: .infinity, maxHeight: .infinity)
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
-                        Picker(selection: viewStore.binding(get: { $0.selectedSensor }, send: { .setSelectedSensor($0) }), label: Text("")) {
-                            ForEach(SelectedSensor.allCases) { sensor in
+                        Picker(selection: viewStore.binding(get: { $0.selectedSensor }, send: { .setSelectedDashboard($0) }), label: Text("")) {
+                            ForEach(Dashboard.allCases) { sensor in
                                 Image(systemName: sensor.rawValue).tag(sensor)
                             }
                         }

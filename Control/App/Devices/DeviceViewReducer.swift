@@ -66,7 +66,7 @@ enum DevicesAction: Equatable {
     case selectDevice(Device?)
 }
 
-let devicesReducer = Reducer<DevicesState, DevicesAction, AppEnvironment> { state, action, _ in
+let devicesReducer = Reducer<DevicesState, DevicesAction, AppEnvironment> { state, action, environment in
     switch action {
     case .toggleFilter:
         state.isDeviceFilterDisabled.toggle()

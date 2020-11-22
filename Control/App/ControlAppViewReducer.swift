@@ -11,7 +11,7 @@ import AppKit
 
 // MARK: - Models
 
-enum SelectedSensor: String, Equatable, CaseIterable, Identifiable {
+enum Dashboard: String, Equatable, CaseIterable, Identifiable {
     var id: Self { self }
 
     case system = "gearshape"
@@ -25,32 +25,40 @@ enum SelectedSensor: String, Equatable, CaseIterable, Identifiable {
 
 struct AppState: Equatable {
     var devicesState = DevicesState()
+    var systemState = SystemState()
     
-    var selectedSensor: SelectedSensor = .system
+    var selectedSensor: Dashboard = .system
 }
 
 enum AppAction: Equatable {
     case devicesAction(DevicesAction)
+    case systemAction(SystemAction)
     
-    case setSelectedSensor(SelectedSensor)
+    case setSelectedDashboard(Dashboard)
     
     case onBackground
     case onInactive
     case onActive
 }
 
-struct AppEnvironment {}
+struct AppEnvironment {
+    var selectedDevice: Device?
+}
 
 let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, _ in
     
     switch action {
+    case let .devicesAction(.selectDevice(device)):
+        state.systemState.selectedDevice = device
         
-    case let .setSelectedSensor(selectedSensor):
+        return .none
+        
+    case let .setSelectedDashboard(selectedSensor):
         state.selectedSensor = selectedSensor
         return .none
         
     case .onActive:
-        switch Process.execute("/usr/bin/xcrun", arguments: ["simctl", "list", "devices", "available", "-j"]) {
+        switch Process.execute(Constant.xcrun, arguments: ["simctl", "list", "devices", "available", "-j"]) {
         case let .some(data):
             state.devicesState.deviceList = try? JSONDecoder().decode(DeviceList.self, from: data)
         case .none:
@@ -64,4 +72,7 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
 }
 .combined(with: devicesReducer.pullback(state: \.devicesState,
                                          action: /AppAction.devicesAction,
+                                         environment: { $0 }))
+.combined(with: systemReducer.pullback(state: \.systemState,
+                                         action: /AppAction.systemAction,
                                          environment: { $0 }))
