@@ -49,6 +49,11 @@ struct SystemView: View {
                                 Text(NSLocale.current.localizedString(forIdentifier: $0) ?? "")
                             }
                         }
+                        
+                        HStack {
+                            Button("Set Language/Locale", action: { viewStore.send(.setLanguageLocale) })
+                            Text("(Requires Reboot)").font(.callout).foregroundColor(.secondary)
+                        }
                     }
                     .padding()
                 }

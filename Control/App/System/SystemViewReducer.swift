@@ -50,6 +50,7 @@ enum SystemAction: Equatable {
     case setAppearance(Appearance)
     case setLanguage(String)
     case setLocale(String)
+    case setLanguageLocale
 }
 
 let systemReducer = Reducer<SystemState, SystemAction, AppEnvironment> { state, action, _ in
@@ -81,21 +82,23 @@ let systemReducer = Reducer<SystemState, SystemAction, AppEnvironment> { state, 
                 let rhsString = NSLocale.current.localizedString(forIdentifier: rhs) ?? ""
                 return lhsString.lowercased() < rhsString.lowercased()
             }
+        return .none
         
+    case let .setLocale(locale):
+        state.locale = locale
+        return .none
+        
+    case .setLanguageLocale:
         switch (state.selectedDevice?.dataPath, state.selectedDevice?.udid) {
         case let (.some(dataPath), .some(udid)):
             let plistPath = dataPath + "/Library/Preferences/.GlobalPreferences.plist"
-            Process.execute(Constant.xcrun, arguments: ["plutil", "-replace", "AppleLanguages", "-json", "[\"\(language)\" ]", plistPath])
+            Process.execute(Constant.xcrun, arguments: ["plutil", "-replace", "AppleLanguages", "-json", "[\"\(state.language)\" ]", plistPath])
             Process.execute(Constant.xcrun, arguments: ["plutil", "-replace", "AppleLocale", "-string", state.locale, plistPath])
             Process.execute(Constant.xcrun, arguments: ["simctl", "shutdown", udid])
             Process.execute(Constant.xcrun, arguments: ["simctl", "boot", udid])
         default:
             break
         }
-        return .none
-        
-    case let .setLocale(locale):
-        state.locale = locale
         return .none
     }
 }
