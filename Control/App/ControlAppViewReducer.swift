@@ -28,7 +28,8 @@ struct AppState: Equatable {
     var systemState = SystemState()
     var batteryState = BatteryState()
     var networkState = NetworkState()
-    
+    var screenState = ScreenState()
+
     var selectedSensor: Dashboard = .system
 }
 
@@ -37,7 +38,8 @@ enum AppAction: Equatable {
     case systemAction(SystemAction)
     case batteryAction(BatteryAction)
     case networkAction(NetworkAction)
-    
+    case screenAction(ScreenAction)
+
     case setSelectedDashboard(Dashboard)
     
     case onBackground
@@ -54,7 +56,10 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
     switch action {
     case let .devicesAction(.selectDevice(device)):
         state.systemState.selectedDevice = device
-        
+        state.batteryState.selectedDevice = device
+        state.networkState.selectedDevice = device
+        state.screenState.selectedDevice = device
+
         return .none
         
     case let .setSelectedDashboard(selectedSensor):
@@ -86,4 +91,8 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
 .combined(with: networkReducer.pullback(state: \.networkState,
                                          action: /AppAction.networkAction,
                                          environment: { $0 }))
+.combined(with: screenReducer.pullback(state: \.screenState,
+                                         action: /AppAction.screenAction,
+                                         environment: { $0 }))
+
 

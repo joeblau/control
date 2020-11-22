@@ -104,6 +104,7 @@ enum WifiMode: String, CaseIterable, Identifiable, CustomStringConvertible {
 // MARK: - Composable
 
 struct NetworkState: Equatable {
+    var selectedDevice: Device? = nil
     var customOperatorName = "Carrier"
     var operatorName: OperatorName = .att
     var dataNetwork: DataNetwork = .wifi
@@ -127,8 +128,10 @@ let networkReducer = Reducer<NetworkState, NetworkAction, AppEnvironment> { stat
 
     switch action {
     case let .setCustomOperatorName(operatorName):
+        guard let udid = state.selectedDevice?.udid else { return .none }
+        
         state.customOperatorName = operatorName
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--operatorName", operatorName, "--cellularMode", "active"])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", udid, "override", "--operatorName", operatorName, "--cellularMode", "active"])
         return .none
         
     case let .setOperatorName(operatorName):
@@ -136,28 +139,38 @@ let networkReducer = Reducer<NetworkState, NetworkAction, AppEnvironment> { stat
         return Effect(value: .setCustomOperatorName(operatorName.rawValue))
         
     case let .setDataNetwork(dataNetwork):
+        guard let udid = state.selectedDevice?.udid else { return .none }
+
         state.dataNetwork = dataNetwork
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--dataNetwork", dataNetwork.rawValue])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", udid, "override", "--dataNetwork", dataNetwork.rawValue])
         return .none
 
     case let .setWifiMode(wifiMode):
+        guard let udid = state.selectedDevice?.udid else { return .none }
+
         state.wifiMode = wifiMode
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--wifiMode", wifiMode.rawValue])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", udid, "override", "--wifiMode", wifiMode.rawValue])
         return .none
 
     case let .setWifiBars(wifiSignal):
+        guard let udid = state.selectedDevice?.udid else { return .none }
+
         state.wifiBars = wifiSignal
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--wifiBars", "\(wifiSignal.rawValue)"])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", udid, "override", "--wifiBars", "\(wifiSignal.rawValue)"])
         return .none
 
     case let .setCellularMode(cellularMode):
+        guard let udid = state.selectedDevice?.udid else { return .none }
+
         state.cellularMode = cellularMode
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--cellularMode", cellularMode.rawValue])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", udid, "override", "--cellularMode", cellularMode.rawValue])
         return .none
 
     case let .setCellularBars(cellularSignal):
+        guard let udid = state.selectedDevice?.udid else { return .none }
+
         state.cellularBars = cellularSignal
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--cellularBars", "\(cellularSignal.rawValue)"])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", udid, "override", "--cellularBars", "\(cellularSignal.rawValue)"])
         return .none
 
     }

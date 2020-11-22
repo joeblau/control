@@ -41,9 +41,7 @@ struct NetworkView: View {
                         .pickerStyle(RadioGroupPickerStyle())
                         
                         Picker("Signal:", selection: viewStore.binding(get: { $0.wifiBars }, send: { .setWifiBars($0) })) {
-                            ForEach(WifiBars.allCases) { bars in
-                                Image("wifi.\(bars.rawValue)").tag(bars)
-                            }
+                            ForEach(WifiBars.allCases) { Image("wifi.\($0.rawValue)") }
                         }
                         .pickerStyle(SegmentedPickerStyle())
                     }.padding()
@@ -57,9 +55,7 @@ struct NetworkView: View {
                         .pickerStyle(RadioGroupPickerStyle())
                         
                         Picker("Signal:", selection: viewStore.binding(get: { $0.cellularBars }, send: { .setCellularBars($0) })) {
-                            ForEach(CellularBars.allCases) { bars in
-                                Image("cell.\(bars.rawValue)").tag(bars)
-                            }
+                            ForEach(CellularBars.allCases) { Image("cell.\($0.rawValue)") }
                         }
                         .pickerStyle(SegmentedPickerStyle())
                     }.padding()

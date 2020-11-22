@@ -17,9 +17,7 @@ struct BatteryView: View {
                 GroupBox(label: Text("Connection").font(.headline).padding(.bottom, 6)) {
                     Form {
                         Picker("State:", selection: viewStore.binding(get: { $0.chargeState }, send: { .setChargeState($0) })) {
-                            ForEach(ChargeState.allCases) { charge in
-                                Text(charge.rawValue)
-                            }
+                            ForEach(ChargeState.allCases) { Text($0.description) }
                         }
                         .pickerStyle(RadioGroupPickerStyle())
                         VStack {}.frame(maxWidth: .infinity)

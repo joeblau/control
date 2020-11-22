@@ -6,53 +6,45 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ScreenView: View {
-    @State var type: ImageFormat = .png
-    @State var display: Display = .none
-    @State var mask: Mask = .none
-    var deviceFamily: DeviceFamily = .iPad
+    let store: Store<ScreenState, ScreenAction>
     
     var body: some View {
-        Group {
-            GroupBox(label: Text("Screenshot").font(.headline).padding(.bottom, 6)) {
-                Form {
-                    Picker("Format:", selection: $type) {
-                        ForEach(ImageFormat.allCases) { type in
-                            Text(type.rawValue.uppercased()).tag(type)
+        WithViewStore(store) { viewStore in
+            Group {
+                GroupBox(label: Text("Screenshot").font(.headline).padding(.bottom, 6)) {
+                    Form {
+                        Picker("Format:", selection: viewStore.binding(get: { $0.type }, send: { .setType($0) })) {
+                            ForEach(ImageFormat.allCases) { Text($0.description) }
                         }
-                    }
-                    
-                    if deviceFamily == .iPad || deviceFamily == .iPhone {
-                        Picker("Display:", selection: $display) {
-                            ForEach(Display.allCases) { display in
-                                Text(display.rawValue).tag(display)
+                        
+                        if let type = viewStore.selectedDevice?.type, type == .iPad || type == .iPhone {
+                            Picker("Display:", selection: viewStore.binding(get: { $0.display }, send: { .setDisplay($0) })) {
+                                ForEach(Display.allCases) { Text($0.description) }
                             }
                         }
-                    }
-                    
-                    Picker("Mask:", selection: $mask) {
-                        ForEach(Mask.allCases) { mask in
-                            Text(mask.rawValue).tag(mask)
+
+                        Picker("Mask:", selection: viewStore.binding(get: { $0.mask }, send: { .setMask($0) })) {
+                            ForEach(Mask.allCases) { Text($0.description) }
                         }
+                        
+                        Button("Take Screenshot", action: { viewStore.send(.takeScreenshot)})
                     }
-                    
-                    Button(action: {}) {
-                        Text("Take Screenshot")
-                    }
+                    .padding()
                 }
-                .padding()
+                Spacer()
             }
-            Spacer()
+            .padding()
+            .navigationTitle("Screen")
         }
-        .padding()
-        .navigationTitle("Screen")
     }
 }
 
 
-struct ScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScreenView()
-    }
-}
+//struct ScreenView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScreenView()
+//    }
+//}

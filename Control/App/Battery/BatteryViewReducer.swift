@@ -10,17 +10,26 @@ import ComposableArchitecture
 
 // MARK: - Models
 
-enum ChargeState: String, Equatable, CaseIterable, Identifiable {
+enum ChargeState: String, Equatable, CaseIterable, Identifiable, CustomStringConvertible {
     var id: Self { self }
 
-    case charging = "Charging"
-    case charged = "Charged"
-    case discharging = "Discharging"
+    case charging
+    case charged
+    case discharging
+    
+    var description: String {
+        switch self {
+        case .charging: return "Charging"
+        case .charged: return "Charged"
+        case .discharging: return "Discharging"
+        }
+    }
 }
 
 // MARK: - Composable
 
 struct BatteryState: Equatable {
+    var selectedDevice: Device? = nil
     var chargeState: ChargeState = .charging
     var level: Double = 100.0
 }
@@ -35,7 +44,7 @@ let batteryReducer = Reducer<BatteryState, BatteryAction, AppEnvironment> { stat
     switch action {
     case let .setChargeState(chargeState):
         state.chargeState = chargeState
-        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--batteryState", chargeState.rawValue.lowercased()])
+        Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--batteryState", chargeState.rawValue])
         return .none
 
     case let .setLevel(percentage):

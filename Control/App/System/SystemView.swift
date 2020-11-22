@@ -8,9 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct SystemView: View {
-    @State private var selectedAppearance = 0
-    
+struct SystemView: View {    
     let store: Store<SystemState, SystemAction>
     
     var body: some View {
