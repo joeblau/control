@@ -29,6 +29,8 @@
 		ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */; };
 		ED5689982569D87A005D4D17 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5689972569D87A005D4D17 /* Constant.swift */; };
 		EDA0B955256A3D010048892C /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0B954256A3D010048892C /* VisualEffectBlur.swift */; };
+		EDA0B959256A40500048892C /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0B958256A40500048892C /* AppsView.swift */; };
+		EDA0B95C256A40A60048892C /* AppsViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0B95B256A40A60048892C /* AppsViewReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewReducer.swift; sourceTree = "<group>"; };
 		ED5689972569D87A005D4D17 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		EDA0B954256A3D010048892C /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		EDA0B958256A40500048892C /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		EDA0B95B256A40A60048892C /* AppsViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		ED0BAAD225688C2D00C8785E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EDA0B957256A40490048892C /* Apps */,
 				ED525E42256951070088BF83 /* Screen */,
 				ED525E41256950FE0088BF83 /* Network */,
 				ED525E40256950F90088BF83 /* Location */,
@@ -186,6 +191,15 @@
 				ED525E432569512E0088BF83 /* ScreenViewReducer.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		EDA0B957256A40490048892C /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				EDA0B958256A40500048892C /* AppsView.swift */,
+				EDA0B95B256A40A60048892C /* AppsViewReducer.swift */,
+			);
+			path = Apps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED0BAAEC256893CB00C8785E /* ControlAppViewReducer.swift in Sources */,
+				EDA0B95C256A40A60048892C /* AppsViewReducer.swift in Sources */,
 				ED525E47256951350088BF83 /* NetworkViewReducer.swift in Sources */,
 				ED525E4D256951410088BF83 /* BatteryViewReducer.swift in Sources */,
 				ED525E4A2569513B0088BF83 /* LocationViewReducer.swift in Sources */,
@@ -271,6 +286,7 @@
 				ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */,
 				ED525E3B256950E90088BF83 /* DeviceViewReducer.swift in Sources */,
 				ED525E442569512E0088BF83 /* ScreenViewReducer.swift in Sources */,
+				EDA0B959256A40500048892C /* AppsView.swift in Sources */,
 				ED0BAADA25688C6E00C8785E /* DeviceView.swift in Sources */,
 				ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */,
 				ED0BAAE425688E3800C8785E /* BatteryView.swift in Sources */,

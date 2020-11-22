@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import ComposableArchitecture
+
+// MARK: - Models
+
+
+// MARK: - Composable
+
+struct LocationState: Equatable {}
+
+enum LocationAction: Equatable {}
+
+let locationReducer = Reducer<LocationState, LocationAction, AppEnvironment> { _, _, _ in
+    return .none
+}

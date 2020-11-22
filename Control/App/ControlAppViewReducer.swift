@@ -15,6 +15,7 @@ enum Dashboard: String, Equatable, CaseIterable, Identifiable {
     var id: Self { self }
 
     case system = "gearshape"
+    case apps = "app.badge"
     case battery = "minus.plus.batteryblock"
     case location = "location"
     case network = "network"
@@ -26,7 +27,9 @@ enum Dashboard: String, Equatable, CaseIterable, Identifiable {
 struct AppState: Equatable {
     var devicesState = DevicesState()
     var systemState = SystemState()
+    var appsState = AppsState()
     var batteryState = BatteryState()
+    var locationState = LocationState()
     var networkState = NetworkState()
     var screenState = ScreenState()
 
@@ -36,7 +39,9 @@ struct AppState: Equatable {
 enum AppAction: Equatable {
     case devicesAction(DevicesAction)
     case systemAction(SystemAction)
+    case appsAction(AppsAction)
     case batteryAction(BatteryAction)
+    case locationAction(LocationAction)
     case networkAction(NetworkAction)
     case screenAction(ScreenAction)
 
@@ -84,8 +89,14 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
 .combined(with: systemReducer.pullback(state: \.systemState,
                                          action: /AppAction.systemAction,
                                          environment: { $0 }))
+.combined(with: appsReducer.pullback(state: \.appsState,
+                                         action: /AppAction.appsAction,
+                                         environment: { $0 }))
 .combined(with: batteryReducer.pullback(state: \.batteryState,
                                          action: /AppAction.batteryAction,
+                                         environment: { $0 }))
+.combined(with: locationReducer.pullback(state: \.locationState,
+                                         action: /AppAction.locationAction,
                                          environment: { $0 }))
 .combined(with: networkReducer.pullback(state: \.networkState,
                                          action: /AppAction.networkAction,
