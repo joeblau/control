@@ -14,28 +14,37 @@ struct DevicesView: View {
     
     var body: some View {
         WithViewStore(store) { viewStore in
-            Group {
+            List {
                 switch viewStore.deviceList?.devices.values.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled } {
                 case let .some(deviceValues):
-                    List(deviceValues) { device in
-                        NavigationLink(destination: selectedDashboard,
-                                       tag: device,
-                                       selection: viewStore.binding(get: { $0.selectedDevice }, send: { .selectDevice($0) })) {
-                            HStack {
-                                switch device.state {
-                                case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
-                                default: Image(systemName: "circlebadge").foregroundColor(.gray)
+                    ForEach(DeviceType.allCases) { deviceType in
+                        let filteredDevices = deviceValues.filter { $0.type == deviceType }
+                        switch filteredDevices.isEmpty {
+                        case true:
+                            EmptyView()
+                        case false:
+                            Section(header: Label(deviceType.description, systemImage: deviceType.rawValue).accentColor(.secondary).foregroundColor(.secondary) ) {
+                                ForEach(filteredDevices) {  device in
+                                    NavigationLink(destination: selectedDashboard,
+                                                   tag: device,
+                                                   selection: viewStore.binding(get: { $0.selectedDevice }, send: { .selectDevice($0) })) {
+                                        HStack {
+                                            switch device.state {
+                                            case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
+                                            default: Image(systemName: "circlebadge").foregroundColor(.gray)
+                                            }
+                                            Text(device.name)
+                                        }
+                                    }
                                 }
-                                Label(device.name, systemImage: device.type.rawValue)
                             }
                         }
-                    }
-                    .overlay(pocket, alignment: .bottom)
-                    .listStyle(DefaultListStyle())
+                     }
                 case .none:
                     Text("No devices")
                 }
             }
+            .overlay(pocket, alignment: .bottom)
             .frame(minWidth: 250, idealWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
             .toolbar {
                 ToolbarItem(placement: .automatic) {

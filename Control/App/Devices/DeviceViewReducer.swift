@@ -20,11 +20,23 @@ enum DeviceState: String, Codable, Equatable {
     case shutdown = "Shutdown"
 }
 
-enum DeviceType: String {
-    case iPad = "ipad"
+enum DeviceType: String, CaseIterable, Identifiable, CustomStringConvertible {
+    var id: Self { self }
+
     case iPhone = "iphone"
+    case iPad = "ipad"
     case watch = "applewatch"
     case tv = "appletv"
+    
+    var description: String {
+        switch self {
+        
+        case .iPhone: return "iPhone"
+        case .iPad: return "iPad"
+        case .watch: return "Apple Watch"
+        case .tv: return "Apple TV"
+        }
+    }
 }
 
 struct DeviceList: Codable, Equatable, Hashable {
