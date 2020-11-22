@@ -46,7 +46,8 @@ struct DevicesView: View {
                 case .battery: BatteryView(store: appStore.scope(state: { $0.batteryState },
                                                                  action: { .batteryAction($0) }))
                 case .location: LocationView()
-                case .network: NetworkView()
+                case .network: NetworkView(store: appStore.scope(state: { $0.networkState },
+                                                                 action: { .networkAction($0) }))
                 case .screen: ScreenView()
                 }
             }

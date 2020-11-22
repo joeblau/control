@@ -6,74 +6,75 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct NetworkView: View {
-    @State private var carrierName: String = "Carrier"
-    @State private var dataNetwork: DataNetwork = .wifi
-    @State private var wiFiMode: WifiMode = .active
-    @State private var wiFiBar: WifiBars = .three
-    @State private var cellularMode: CellularMode = .active
-    @State private var cellularBar: CellularBars = .four
-    
+    let store: Store<NetworkState, NetworkAction>
     
     var body: some View {
-        Group {
-            GroupBox(label: Text("Carrier Operator").font(.headline).padding(.bottom, 6)) {
-                TextField("Carrier", text: $carrierName) {
-//                    self.updateData()
-                }
-                .padding()
-            }
+        WithViewStore(store) { viewStore in
             
-            GroupBox(label: Text("Network Type").font(.headline).padding(.bottom, 6)) {
-                Picker("", selection: $dataNetwork) {
-                    ForEach(DataNetwork.allCases) { Text($0.rawValue) }
-                }
-                .pickerStyle(PopUpButtonPickerStyle())
-                .padding()
-            }
-
-            GroupBox(label: Text("WiFi").font(.headline).padding(.bottom, 6)) {
-                Form {
-                    Picker("Mode:", selection: $wiFiMode) {
-                        ForEach(WifiMode.allCases) { Text($0.rawValue) }
-                    }
-                    .pickerStyle(RadioGroupPickerStyle())
-
-                    Picker("Signal:", selection: $wiFiBar) {
-                        ForEach(WifiBars.allCases) { bars in
-                            Image("wifi.\(bars.rawValue)").tag(bars)
+            Group {
+                GroupBox(label: Text("Carrier").font(.headline).padding(.bottom, 6)) {
+                    Form {
+                        TextField("Carrier", text: viewStore.binding(get: { $0.customOperatorName }, send: { .setCustomOperatorName($0) }))
+                        Picker("Operators:", selection: viewStore.binding(get: { $0.operatorName }, send: { .setOperatorName($0) })) {
+                            ForEach(OperatorName.allCases) { Text($0.rawValue) }
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                }.padding()
-            }
-            
-            GroupBox(label: Text("Cellular").font(.headline).padding(.bottom, 6)) {
-                Form {
-                Picker("Mode:", selection: $cellularMode) {
-                    ForEach(CellularMode.allCases) { Text($0.rawValue) }
+                    .padding()
                 }
-                .pickerStyle(RadioGroupPickerStyle())
-
-                Picker("Signal:", selection: $cellularBar) {
-                    ForEach(CellularBars.allCases) { bars in
-                        Image("cell.\(bars.rawValue)").tag(bars)
+                
+                GroupBox(label: Text("Network Type").font(.headline).padding(.bottom, 6)) {
+                    Picker("", selection: viewStore.binding(get: { $0.dataNetwork }, send: { .setDataNetwork($0) })) {
+                        ForEach(DataNetwork.allCases) { Text($0.description) }
                     }
+                    .pickerStyle(PopUpButtonPickerStyle())
+                    .padding()
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                }.padding()
+                
+                GroupBox(label: Text("WiFi").font(.headline).padding(.bottom, 6)) {
+                    Form {
+                        Picker("Mode:", selection: viewStore.binding(get: { $0.wifiMode }, send: { .setWifiMode($0) })) {
+                            ForEach(WifiMode.allCases) { Text($0.description) }
+                        }
+                        .pickerStyle(RadioGroupPickerStyle())
+                        
+                        Picker("Signal:", selection: viewStore.binding(get: { $0.wifiBars }, send: { .setWifiBars($0) })) {
+                            ForEach(WifiBars.allCases) { bars in
+                                Image("wifi.\(bars.rawValue)").tag(bars)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }.padding()
+                }
+                
+                GroupBox(label: Text("Cellular").font(.headline).padding(.bottom, 6)) {
+                    Form {
+                        Picker("Mode:", selection: viewStore.binding(get: { $0.cellularMode }, send: { .setCellularMode($0) })) {
+                            ForEach(CellularMode.allCases) { Text($0.description) }
+                        }
+                        .pickerStyle(RadioGroupPickerStyle())
+                        
+                        Picker("Signal:", selection: viewStore.binding(get: { $0.cellularBars }, send: { .setCellularBars($0) })) {
+                            ForEach(CellularBars.allCases) { bars in
+                                Image("cell.\(bars.rawValue)").tag(bars)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }.padding()
+                }
+                
+                Spacer()
             }
-
-            Spacer()
+            .padding()
+            .navigationTitle("Network")
         }
-        .padding()
-        .navigationTitle("Network")
     }
 }
 
-struct NetworkView_Previews: PreviewProvider {
-    static var previews: some View {
-        NetworkView()
-    }
-}
+//struct NetworkView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NetworkView()
+//    }
+//}

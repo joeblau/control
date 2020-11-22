@@ -41,7 +41,6 @@ let batteryReducer = Reducer<BatteryState, BatteryAction, AppEnvironment> { stat
     case let .setLevel(percentage):
         state.level = percentage
         Process.execute(Constant.xcrun, arguments: ["simctl", "status_bar", "booted", "override", "--batteryLevel", "\(percentage)"])
-
         return .none
     }
 }
