@@ -28,6 +28,7 @@
 		ED525E4D256951410088BF83 /* BatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4C256951410088BF83 /* BatteryViewReducer.swift */; };
 		ED525E502569514C0088BF83 /* SystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */; };
 		ED5689982569D87A005D4D17 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5689972569D87A005D4D17 /* Constant.swift */; };
+		EDA0B955256A3D010048892C /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0B954256A3D010048892C /* VisualEffectBlur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		ED525E4C256951410088BF83 /* BatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewReducer.swift; sourceTree = "<group>"; };
 		ED525E4F2569514C0088BF83 /* SystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewReducer.swift; sourceTree = "<group>"; };
 		ED5689972569D87A005D4D17 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		EDA0B954256A3D010048892C /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				ED0BAACA25688BB700C8785E /* Info.plist */,
 				ED0BAACB25688BB700C8785E /* Control.entitlements */,
 				ED0BAAC725688BB700C8785E /* Preview Content */,
+				EDA0B954256A3D010048892C /* VisualEffectBlur.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				ED525E47256951350088BF83 /* NetworkViewReducer.swift in Sources */,
 				ED525E4D256951410088BF83 /* BatteryViewReducer.swift in Sources */,
 				ED525E4A2569513B0088BF83 /* LocationViewReducer.swift in Sources */,
+				EDA0B955256A3D010048892C /* VisualEffectBlur.swift in Sources */,
 				ED0BAB01256897F800C8785E /* SampleControlViewReducer.swift in Sources */,
 				ED525E3B256950E90088BF83 /* DeviceViewReducer.swift in Sources */,
 				ED525E442569512E0088BF83 /* ScreenViewReducer.swift in Sources */,

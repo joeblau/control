@@ -44,6 +44,7 @@ struct DevicesView: View {
                     Text("No devices")
                 }
             }
+            .padding(.bottom, 40)
             .overlay(pocket, alignment: .bottom)
             .frame(minWidth: 250, idealWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
             .toolbar {
@@ -85,6 +86,7 @@ struct DevicesView: View {
     
     var pocket: some View {
         WithViewStore(store) { viewStore in
+            
             VStack(alignment: .leading, spacing: 0) {
                 Divider()
                 Button(action: {}) {
@@ -98,6 +100,7 @@ struct DevicesView: View {
                 .padding(.horizontal, 16)
                 .buttonStyle(PlainButtonStyle())
             }
+            .background(VisualEffectBlur())
         }
     }
 }
