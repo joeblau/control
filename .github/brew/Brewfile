@@ -1,0 +1,9 @@
+# Homebrew dependences
+
+brew "swiftformat"
+brew "swiftlint"
+brew "xcodegen"
+brew "swiftgen"
+brew "carthage"
+brew "cocoapods"
+brew "gpg"
