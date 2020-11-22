@@ -43,7 +43,8 @@ struct DevicesView: View {
                 switch viewStore.selectedSensor {
                 case .system: SystemView(store: appStore.scope(state: { $0.systemState },
                                                                action: { .systemAction($0) }))
-                case .battery: BatteryView()
+                case .battery: BatteryView(store: appStore.scope(state: { $0.batteryState },
+                                                                 action: { .batteryAction($0) }))
                 case .location: LocationView()
                 case .network: NetworkView()
                 case .screen: ScreenView()

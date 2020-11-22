@@ -6,48 +6,48 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct BatteryView: View {
-    @State private var batteryLevel = 100.0
-    @State private var batteryState: BatteryState = .charging
+    let store: Store<BatteryState, BatteryAction>
     
     var body: some View {
-        Group {
-            GroupBox(label: Text("Connection").font(.headline).padding(.bottom, 6)) {
-                Form {
-                    Picker("State:", selection: $batteryState) {
-                        ForEach(BatteryState.allCases, id: \.self) { state in
-                            Text(state.rawValue)
+        WithViewStore(store) { viewStore in
+            Group {
+                GroupBox(label: Text("Connection").font(.headline).padding(.bottom, 6)) {
+                    Form {
+                        Picker("State:", selection: viewStore.binding(get: { $0.chargeState }, send: { .setChargeState($0) })) {
+                            ForEach(ChargeState.allCases) { charge in
+                                Text(charge.rawValue)
+                            }
+                        }
+                        .pickerStyle(RadioGroupPickerStyle())
+                        VStack {}.frame(maxWidth: .infinity)
+                    }
+                    .padding()
+                }
+                
+                GroupBox(label: Text("Percentage: \(Int(round(viewStore.level)))%").font(.headline).padding(.bottom, 6)) {
+                    Form {
+                        Slider(value: viewStore.binding(get: { $0.level }, send: { .setLevel($0) }),
+                               in: 0...100,
+                               minimumValueLabel: Text("0%"),
+                               maximumValueLabel: Text("100%")) {
+                            Text("Level:")
                         }
                     }
-                    .pickerStyle(RadioGroupPickerStyle())
-                    VStack {}.frame(maxWidth: .infinity)
+                    .padding()
                 }
-                .padding()
+                Spacer()
             }
-
-            GroupBox(label: Text("Percentage: \(Int(round(batteryLevel)))%").font(.headline).padding(.bottom, 6)) {
-                Form {
-                    Slider(value: $batteryLevel, in: 0...100, onEditingChanged: levelChanged, minimumValueLabel: Text("0%"), maximumValueLabel: Text("100%")) {
-                        Text("Level:")
-                    }
-                }
-                .padding()
-            }
-            Spacer()
+            .padding()
+            .navigationTitle("Battery")
         }
-        .padding()
-        .navigationTitle("Battery")
     }
-    
-    /// Triggered when the user adjusts the battery level.
-    func levelChanged(_ isEditing: Bool) {
-    }
-    
 }
 
-struct BatteryView_Previews: PreviewProvider {
-    static var previews: some View {
-        BatteryView()
-    }
-}
+//struct BatteryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BatteryView()
+//    }
+//}

@@ -26,6 +26,7 @@ enum Dashboard: String, Equatable, CaseIterable, Identifiable {
 struct AppState: Equatable {
     var devicesState = DevicesState()
     var systemState = SystemState()
+    var batteryState = BatteryState()
     
     var selectedSensor: Dashboard = .system
 }
@@ -33,6 +34,7 @@ struct AppState: Equatable {
 enum AppAction: Equatable {
     case devicesAction(DevicesAction)
     case systemAction(SystemAction)
+    case batteryAction(BatteryAction)
     
     case setSelectedDashboard(Dashboard)
     
@@ -75,4 +77,7 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
                                          environment: { $0 }))
 .combined(with: systemReducer.pullback(state: \.systemState,
                                          action: /AppAction.systemAction,
+                                         environment: { $0 }))
+.combined(with: batteryReducer.pullback(state: \.batteryState,
+                                         action: /AppAction.batteryAction,
                                          environment: { $0 }))
