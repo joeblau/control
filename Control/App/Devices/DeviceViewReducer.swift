@@ -7,6 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
+import SwiftUI
 
 // MARK: - Models
 
@@ -51,19 +52,29 @@ extension Device {
         default: return .iPhone
         }
     }
+    
+    var powerColor: Color {
+        switch self.state {
+        case .some(.booted): return .red
+        case .some(.shutdown): return .green
+        default: return .gray
+        }
+    }
 }
 
 // MARK: - Composable
 
 struct DevicesState: Equatable {
+    var selectedDevice: Device? = nil
     var isDeviceFilterDisabled = true
     var deviceList: DeviceList? = nil
-    var selectedDevice: Device? = nil
 }
 
 enum DevicesAction: Equatable {
     case toggleFilter
     case selectDevice(Device?)
+    case eraseDevice
+    case toggleState
 }
 
 let devicesReducer = Reducer<DevicesState, DevicesAction, AppEnvironment> { state, action, environment in
@@ -75,5 +86,28 @@ let devicesReducer = Reducer<DevicesState, DevicesAction, AppEnvironment> { stat
     case let .selectDevice(selectedDevice):
         state.selectedDevice = selectedDevice
         return .none
+    
+    case .eraseDevice:
+        guard let udid = state.selectedDevice?.udid else { return .none }
+        Process.execute(Constant.xcrun, arguments: ["simctl", "erase", udid])
+        return .none
+        
+    case .toggleState:
+        guard let udid = state.selectedDevice?.udid else { return .none }
+
+        switch state.selectedDevice?.state {
+        case .some(.booted):
+            state.selectedDevice?.state = .shutdown
+            Process.execute(Constant.xcrun, arguments: ["simctl", "shutdown", udid])
+            return .none
+            
+        case .some(.shutdown):
+            state.selectedDevice?.state = .booted
+            Process.execute(Constant.xcrun, arguments: ["simctl", "boot", udid])
+            return .none
+            
+        default:
+            return .none
+        }
     }
 }

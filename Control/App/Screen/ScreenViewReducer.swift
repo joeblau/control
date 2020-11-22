@@ -107,9 +107,7 @@ enum ScreenAction: Equatable {
 }
 
 let screenReducer = Reducer<ScreenState, ScreenAction, AppEnvironment> { state, action, _ in
-    
     switch action {
-        
     case let .setType(type):
         state.type = type
         return .none

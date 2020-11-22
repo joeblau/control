@@ -98,5 +98,4 @@ let systemReducer = Reducer<SystemState, SystemAction, AppEnvironment> { state, 
         state.locale = locale
         return .none
     }
-    
 }

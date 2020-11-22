@@ -125,7 +125,6 @@ enum NetworkAction: Equatable {
 }
 
 let networkReducer = Reducer<NetworkState, NetworkAction, AppEnvironment> { state, action, _ in
-
     switch action {
     case let .setCustomOperatorName(operatorName):
         guard let udid = state.selectedDevice?.udid else { return .none }
@@ -174,5 +173,4 @@ let networkReducer = Reducer<NetworkState, NetworkAction, AppEnvironment> { stat
         return .none
 
     }
-    
 }

@@ -17,18 +17,6 @@ struct ControlAppView: View {
                 DevicesView(appStore: store,
                             store: store.scope(state: { $0.devicesState },
                                                action: { AppAction.devicesAction($0) }))
-                    .frame(minWidth: 250, idealWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
-                .toolbar {
-                    ToolbarItem(placement: .automatic) {
-                        Spacer()
-                    }
-                    ToolbarItem(placement: .automatic) {
-                        Button(action: {}) {
-                            Image(systemName: "power")
-                                .foregroundColor(.green)
-                        }
-                    }
-                }
                 Text("Select Device")
                 .frame(minWidth: 550, idealWidth: 800, maxWidth: .infinity, maxHeight: .infinity)
                 .toolbar {

@@ -52,7 +52,6 @@ struct AppEnvironment {
 }
 
 let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, _ in
-    
     switch action {
     case let .devicesAction(.selectDevice(device)):
         state.systemState.selectedDevice = device

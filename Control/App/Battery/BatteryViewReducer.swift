@@ -40,7 +40,6 @@ enum BatteryAction: Equatable {
 }
 
 let batteryReducer = Reducer<BatteryState, BatteryAction, AppEnvironment> { state, action, _ in
-    
     switch action {
     case let .setChargeState(chargeState):
         state.chargeState = chargeState

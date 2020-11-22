@@ -14,25 +14,44 @@ struct DevicesView: View {
     
     var body: some View {
         WithViewStore(store) { viewStore in
-            switch viewStore.deviceList?.devices.values.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled } {
-            case let .some(deviceValues):
-                List(deviceValues) { device in
-                    NavigationLink(destination: selectedDashboard,
-                                   tag: device,
-                                   selection: viewStore.binding(get: { $0.selectedDevice }, send: { .selectDevice($0) })) {
-                        HStack {
-                            switch device.state {
-                            case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
-                            default: Image(systemName: "circlebadge").foregroundColor(.gray)
+            Group {
+                switch viewStore.deviceList?.devices.values.flatMap { $0 }.filter { $0.state == .booted || viewStore.isDeviceFilterDisabled } {
+                case let .some(deviceValues):
+                    List(deviceValues) { device in
+                        NavigationLink(destination: selectedDashboard,
+                                       tag: device,
+                                       selection: viewStore.binding(get: { $0.selectedDevice }, send: { .selectDevice($0) })) {
+                            HStack {
+                                switch device.state {
+                                case .booted: Image(systemName: "circlebadge.fill").foregroundColor(.green)
+                                default: Image(systemName: "circlebadge").foregroundColor(.gray)
+                                }
+                                Label(device.name, systemImage: device.type.rawValue)
                             }
-                            Label(device.name, systemImage: device.type.rawValue)
                         }
                     }
+                    .overlay(pocket, alignment: .bottom)
+                    .listStyle(DefaultListStyle())
+                case .none:
+                    Text("No devices")
                 }
-                .overlay(Pocket(store: store), alignment: .bottom)
-                .listStyle(DefaultListStyle())
-            case .none:
-                Text("No devices")
+            }
+            .frame(minWidth: 250, idealWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Spacer()
+                }
+                ToolbarItemGroup(placement: .automatic) {
+                    Button(action: { viewStore.send(.eraseDevice) }) {
+                        Image(systemName: "trash")
+                    }
+                    .disabled(viewStore.selectedDevice == nil)
+                    Button(action: { viewStore.send(.toggleState) }) {
+                        Image(systemName: "power")
+                            .foregroundColor(viewStore.selectedDevice?.powerColor ?? .gray)
+                    }
+                    .disabled(viewStore.selectedDevice == nil)
+                }
             }
         }
     }
@@ -54,12 +73,8 @@ struct DevicesView: View {
             }
         }
     }
-}
-
-struct Pocket: View {
-    let store: Store<DevicesState, DevicesAction>
-
-    var body: some View {
+    
+    var pocket: some View {
         WithViewStore(store) { viewStore in
             VStack(alignment: .leading, spacing: 0) {
                 Divider()
