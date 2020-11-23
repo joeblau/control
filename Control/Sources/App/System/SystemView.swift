@@ -60,9 +60,10 @@ struct SystemView: View {
     }
 }
 
-//
-// struct SystemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SystemView()
-//    }
-// }
+#if DEBUG
+ struct SystemView_Previews: PreviewProvider {
+    static var previews: some View {
+        SystemView(store: sampleSystemReducer)
+    }
+ }
+#endif

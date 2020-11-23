@@ -40,8 +40,10 @@ struct BatteryView: View {
     }
 }
 
-// struct BatteryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BatteryView()
-//    }
-// }
+#if DEBUG
+ struct BatteryView_Previews: PreviewProvider {
+    static var previews: some View {
+        BatteryView(store: sampleBatteryReducer)
+    }
+ }
+#endif

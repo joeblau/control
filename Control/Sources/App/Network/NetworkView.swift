@@ -65,8 +65,10 @@ struct NetworkView: View {
     }
 }
 
-// struct NetworkView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NetworkView()
-//    }
-// }
+#if DEBUG
+ struct NetworkView_Previews: PreviewProvider {
+    static var previews: some View {
+        NetworkView(store: sampleNetworkReducer)
+    }
+ }
+#endif

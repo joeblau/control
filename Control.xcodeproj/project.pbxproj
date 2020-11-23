@@ -22,17 +22,25 @@
 		4488B068A809634868C2DFE8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0087A41975729A5A2A44627A /* Constant.swift */; };
 		47B3E52FCFD5077FB587B5BC /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F90BD075CEC6358610264D /* ScreenView.swift */; };
 		557DF0451FC66EA92CF6D756 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56F83DA8A05F7089963308 /* VisualEffectBlur.swift */; };
-		571005ACB6BB03FAE1033185 /* DeviceViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421402E484FFAF28E0B3A18B /* DeviceViewReducer.swift */; };
+		571005ACB6BB03FAE1033185 /* DevicesViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421402E484FFAF28E0B3A18B /* DevicesViewReducer.swift */; };
 		65EAD3C55FF64A44206E8215 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42049E90CB7CE88F7C8C1256 /* Strings.swift */; };
 		8BD182B17ECC4DC5790EE144 /* SystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88357D0DFFAA90DC1BA33B /* SystemViewReducer.swift */; };
 		8FC23487BE978A42474255CC /* SampleControlViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE20ED3F75E1C25AA878F5 /* SampleControlViewReducer.swift */; };
-		965DFC3DE277A09FC7EB6D89 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB97ECF39F23C722234C2F /* DeviceView.swift */; };
+		965DFC3DE277A09FC7EB6D89 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB97ECF39F23C722234C2F /* DevicesView.swift */; };
 		A7182087E2776BC8C7A8E803 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E712B7069710484855F97F4A /* ComposableArchitecture */; };
 		AE3553C269CE9880D053D6DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6903D36A597465D1D2C2E94B /* Localizable.strings */; };
 		B5F2AE424722FE4116F33F46 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD854A0CCD885F82E62DAD9 /* BatteryView.swift */; };
 		C8D01DA443EC546B50EEDCE9 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49EF7F856D13EC3CCCE6A8 /* NetworkView.swift */; };
 		CD34BABF4C0E4DAB0E6FB5B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ABD4EE1136262D1FD8397D /* Assets.xcassets */; };
 		EDC40443256B90750076A699 /* LocationManagerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40442256B90750076A699 /* LocationManagerReducer.swift */; };
+		EDC40446256B91090076A699 /* SampleAppsViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40445256B91090076A699 /* SampleAppsViewReducer.swift */; };
+		EDC40449256B91120076A699 /* SampleBatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40448256B91120076A699 /* SampleBatteryViewReducer.swift */; };
+		EDC4044C256B911A0076A699 /* SampleDevicesViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4044B256B911A0076A699 /* SampleDevicesViewReducer.swift */; };
+		EDC4044F256B91240076A699 /* SampleLocationViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4044E256B91240076A699 /* SampleLocationViewReducer.swift */; };
+		EDC40454256B91410076A699 /* SampleNetworkViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40453256B91410076A699 /* SampleNetworkViewReducer.swift */; };
+		EDC40457256B914C0076A699 /* SampleScreenViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40456256B914C0076A699 /* SampleScreenViewReducer.swift */; };
+		EDC4045A256B91560076A699 /* SampleSystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40459256B91560076A699 /* SampleSystemViewReducer.swift */; };
+		EDC4045D256B91A40076A699 /* SampleAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4045C256B91A40076A699 /* SampleAppEnvironment.swift */; };
 		F1DC4176A3717D82ACA39E54 /* BatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B675161120D817C563EA1FE /* BatteryViewReducer.swift */; };
 		FA97CB8A4CC00FD78B568C88 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 751BD96142A64FE2CBA109F3 /* ComposableCoreLocation */; };
 /* End PBXBuildFile section */
@@ -44,7 +52,7 @@
 		25016EB3C65189AA0BA313AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3AC5C07EFA6C999EF374A736 /* ScreenViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewReducer.swift; sourceTree = "<group>"; };
 		42049E90CB7CE88F7C8C1256 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		421402E484FFAF28E0B3A18B /* DeviceViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewReducer.swift; sourceTree = "<group>"; };
+		421402E484FFAF28E0B3A18B /* DevicesViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewReducer.swift; sourceTree = "<group>"; };
 		450933C0CE81A57BC264BDB4 /* Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Control.entitlements; sourceTree = "<group>"; };
 		47F87C960492546710B41972 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		5B675161120D817C563EA1FE /* BatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewReducer.swift; sourceTree = "<group>"; };
@@ -62,9 +70,17 @@
 		D4464FC0D810DA7ADDAF0247 /* NetworkViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewReducer.swift; sourceTree = "<group>"; };
 		DB56F83DA8A05F7089963308 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		DE30E685C1C5DE2682AE23DE /* Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Control.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3FB97ECF39F23C722234C2F /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		E3FB97ECF39F23C722234C2F /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		E88BD714FBA55242BFB983AB /* ControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlApp.swift; sourceTree = "<group>"; };
 		EDC40442256B90750076A699 /* LocationManagerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerReducer.swift; sourceTree = "<group>"; };
+		EDC40445256B91090076A699 /* SampleAppsViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppsViewReducer.swift; sourceTree = "<group>"; };
+		EDC40448256B91120076A699 /* SampleBatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBatteryViewReducer.swift; sourceTree = "<group>"; };
+		EDC4044B256B911A0076A699 /* SampleDevicesViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDevicesViewReducer.swift; sourceTree = "<group>"; };
+		EDC4044E256B91240076A699 /* SampleLocationViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLocationViewReducer.swift; sourceTree = "<group>"; };
+		EDC40453256B91410076A699 /* SampleNetworkViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNetworkViewReducer.swift; sourceTree = "<group>"; };
+		EDC40456256B914C0076A699 /* SampleScreenViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScreenViewReducer.swift; sourceTree = "<group>"; };
+		EDC40459256B91560076A699 /* SampleSystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSystemViewReducer.swift; sourceTree = "<group>"; };
+		EDC4045C256B91A40076A699 /* SampleAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppEnvironment.swift; sourceTree = "<group>"; };
 		FAD854A0CCD885F82E62DAD9 /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		FC49EF7F856D13EC3CCCE6A8 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +118,8 @@
 		1605A3BE28CD442F12254CD2 /* Devices */ = {
 			isa = PBXGroup;
 			children = (
-				E3FB97ECF39F23C722234C2F /* DeviceView.swift */,
-				421402E484FFAF28E0B3A18B /* DeviceViewReducer.swift */,
+				E3FB97ECF39F23C722234C2F /* DevicesView.swift */,
+				421402E484FFAF28E0B3A18B /* DevicesViewReducer.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -113,6 +129,14 @@
 			children = (
 				25016EB3C65189AA0BA313AF /* Preview Assets.xcassets */,
 				AEDE20ED3F75E1C25AA878F5 /* SampleControlViewReducer.swift */,
+				EDC40445256B91090076A699 /* SampleAppsViewReducer.swift */,
+				EDC40448256B91120076A699 /* SampleBatteryViewReducer.swift */,
+				EDC4044B256B911A0076A699 /* SampleDevicesViewReducer.swift */,
+				EDC4044E256B91240076A699 /* SampleLocationViewReducer.swift */,
+				EDC40453256B91410076A699 /* SampleNetworkViewReducer.swift */,
+				EDC40456256B914C0076A699 /* SampleScreenViewReducer.swift */,
+				EDC40459256B91560076A699 /* SampleSystemViewReducer.swift */,
+				EDC4045C256B91A40076A699 /* SampleAppEnvironment.swift */,
 			);
 			path = PreviewContent;
 			sourceTree = "<group>";
@@ -322,26 +346,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				340B7D918FBA2FFED7A9C6FB /* AppsView.swift in Sources */,
+				EDC4044C256B911A0076A699 /* SampleDevicesViewReducer.swift in Sources */,
 				2F04A14DC06E8501A957E880 /* AppsViewReducer.swift in Sources */,
 				B5F2AE424722FE4116F33F46 /* BatteryView.swift in Sources */,
+				EDC4044F256B91240076A699 /* SampleLocationViewReducer.swift in Sources */,
 				F1DC4176A3717D82ACA39E54 /* BatteryViewReducer.swift in Sources */,
+				EDC4045A256B91560076A699 /* SampleSystemViewReducer.swift in Sources */,
 				4488B068A809634868C2DFE8 /* Constant.swift in Sources */,
 				0FF214FF133740A0DD476AF5 /* ControlApp.swift in Sources */,
 				03139DD8DF5EAEC28855804F /* ControlAppView.swift in Sources */,
+				EDC4045D256B91A40076A699 /* SampleAppEnvironment.swift in Sources */,
 				13F35BD72A7A5E3F092F985A /* ControlAppViewReducer.swift in Sources */,
-				965DFC3DE277A09FC7EB6D89 /* DeviceView.swift in Sources */,
-				571005ACB6BB03FAE1033185 /* DeviceViewReducer.swift in Sources */,
+				965DFC3DE277A09FC7EB6D89 /* DevicesView.swift in Sources */,
+				EDC40457256B914C0076A699 /* SampleScreenViewReducer.swift in Sources */,
+				571005ACB6BB03FAE1033185 /* DevicesViewReducer.swift in Sources */,
 				3E3E8FF7D740D5846D8579A4 /* LocationView.swift in Sources */,
 				12C007E7EDBAF8E282D429B0 /* LocationViewReducer.swift in Sources */,
+				EDC40454256B91410076A699 /* SampleNetworkViewReducer.swift in Sources */,
 				C8D01DA443EC546B50EEDCE9 /* NetworkView.swift in Sources */,
 				150B01F90DC90B6C376DC58B /* NetworkViewReducer.swift in Sources */,
 				0191A3B40922DAA84AB26DF1 /* Process+Extensions.swift in Sources */,
 				8FC23487BE978A42474255CC /* SampleControlViewReducer.swift in Sources */,
 				47B3E52FCFD5077FB587B5BC /* ScreenView.swift in Sources */,
+				EDC40446256B91090076A699 /* SampleAppsViewReducer.swift in Sources */,
 				260E7400B080255D4BD0AF16 /* ScreenViewReducer.swift in Sources */,
 				65EAD3C55FF64A44206E8215 /* Strings.swift in Sources */,
 				EDC40443256B90750076A699 /* LocationManagerReducer.swift in Sources */,
 				15BF65E78B11CDDA467DC6FE /* SystemView.swift in Sources */,
+				EDC40449256B91120076A699 /* SampleBatteryViewReducer.swift in Sources */,
 				8BD182B17ECC4DC5790EE144 /* SystemViewReducer.swift in Sources */,
 				557DF0451FC66EA92CF6D756 /* VisualEffectBlur.swift in Sources */,
 			);

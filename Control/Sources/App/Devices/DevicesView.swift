@@ -99,9 +99,10 @@ struct DevicesView: View {
 }
 
 #if DEBUG
-    // struct DevicesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DevicesView(store: sampleControlViewReducer)
-//    }
-    // }
+     struct DevicesView_Previews: PreviewProvider {
+    static var previews: some View {
+        DevicesView(appStore: sampleControlViewReducer,
+                    store: sampleDevicesReducer)
+    }
+     }
 #endif

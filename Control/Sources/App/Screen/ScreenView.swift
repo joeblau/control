@@ -38,8 +38,10 @@ struct ScreenView: View {
     }
 }
 
-// struct ScreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ScreenView()
-//    }
-// }
+#if DEBUG
+ struct ScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        ScreenView(store: sampleScreenReducer)
+    }
+ }
+#endif

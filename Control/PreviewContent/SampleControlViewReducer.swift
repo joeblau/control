@@ -7,5 +7,5 @@ import Foundation
 #if DEBUG
     let sampleControlViewReducer = Store(initialState: AppState(),
                                          reducer: controlAppReducer,
-                                         environment: AppEnvironment(locationManager: .unimplemented()))
+                                         environment: sampleAppEnvironment)
 #endif
