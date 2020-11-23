@@ -15,9 +15,9 @@ enum ChargeState: String, Equatable, CaseIterable, Identifiable, CustomStringCon
 
     var description: String {
         switch self {
-        case .charging: return "Charging"
-        case .charged: return "Charged"
-        case .discharging: return "Discharging"
+        case .charging: return L10n.charging
+        case .charged: return L10n.charged
+        case .discharging: return L10n.discharging
         }
     }
 }

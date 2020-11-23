@@ -14,7 +14,7 @@ struct ControlAppView: View {
                             store: store.scope(state: { $0.devicesState },
                                                action: { AppAction.devicesAction($0) }))
 
-                Text("Select Device")
+                Text(L10n.selectDevice)
                     .frame(minWidth: 550, idealWidth: 800, maxWidth: .infinity, maxHeight: .infinity)
                     .toolbar {
                         ToolbarItem(placement: .navigation) {

@@ -7,13 +7,24 @@ import SwiftUI
 
 // MARK: - Models
 
-enum DeviceState: String, Codable, Equatable {
+enum DeviceState: String, Codable, Equatable, CustomStringConvertible {
     case unknown
     case creating = "Creating"
     case booting = "Booting"
     case booted = "Booted"
     case shuttingDown = "ShuttingDown"
     case shutdown = "Shutdown"
+
+    var description: String {
+        switch self {
+        case .unknown: return L10n.unknown
+        case .creating: return L10n.creating
+        case .booting: return L10n.booting
+        case .booted: return L10n.booted
+        case .shuttingDown: return L10n.shuttingDown
+        case .shutdown: return L10n.shutdown
+        }
+    }
 }
 
 enum DeviceType: String, CaseIterable, Identifiable, CustomStringConvertible {
@@ -26,10 +37,10 @@ enum DeviceType: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .iPhone: return "iPhone"
-        case .iPad: return "iPad"
-        case .watch: return "Apple Watch"
-        case .tv: return "Apple TV"
+        case .iPhone: return L10n.iphone
+        case .iPad: return L10n.ipad
+        case .watch: return L10n.appleWatch
+        case .tv: return L10n.appleTv
         }
     }
 }
@@ -53,9 +64,9 @@ struct Device: Codable, Equatable, Hashable, Identifiable {
 extension Device {
     var type: DeviceType {
         switch true {
-        case deviceTypeIdentifier?.contains("iPad"): return .iPad
-        case deviceTypeIdentifier?.contains("Watch"): return .watch
-        case deviceTypeIdentifier?.contains("TV"): return .tv
+        case deviceTypeIdentifier?.contains(Constant.ipad): return .iPad
+        case deviceTypeIdentifier?.contains(Constant.watch): return .watch
+        case deviceTypeIdentifier?.contains(Constant.tv): return .tv
         default: return .iPhone
         }
     }

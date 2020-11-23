@@ -15,7 +15,7 @@ struct LocationView: View {
     var body: some View {
         Map(coordinateRegion: $coordinateRegion)
             .edgesIgnoringSafeArea(.all)
-            .navigationTitle("Location")
+            .navigationTitle(L10n.location)
     }
 }
 

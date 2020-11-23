@@ -6,11 +6,18 @@ import Foundation
 
 // MARK: - Models
 
-enum Appearance: String, CaseIterable, Identifiable {
+enum Appearance: String, CaseIterable, Identifiable, CustomStringConvertible {
     var id: Self { self }
 
-    case light = "Light"
-    case dark = "Dark"
+    case light
+    case dark
+
+    var description: String {
+        switch self {
+        case .light: return L10n.light
+        case .dark: return L10n.dark
+        }
+    }
 }
 
 // MARK: - Composable

@@ -37,7 +37,7 @@ struct DevicesView: View {
                         }
                     }
                 case .none:
-                    Text("No devices")
+                    Text(L10n.noDevices)
                 }
             }
             .padding(.bottom, 40)
@@ -84,7 +84,7 @@ struct DevicesView: View {
                 Divider()
                 Button(action: {}) {
                     Toggle(isOn: viewStore.binding(get: { !$0.isDeviceFilterDisabled }, send: .toggleFilter), label: {
-                        Label("Filter booted devices", systemImage: "line.horizontal.3.decrease")
+                        Label(L10n.filterBootedDevices, systemImage: "line.horizontal.3.decrease")
                             .padding(6)
                             .contentShape(Rectangle())
                     })

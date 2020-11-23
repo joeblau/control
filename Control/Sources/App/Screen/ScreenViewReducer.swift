@@ -17,11 +17,11 @@ enum ImageFormat: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .png: return "PNG"
-        case .tiff: return "TIFF"
-        case .bmp: return "BMP"
-        case .gif: return "GIF"
-        case .jpeg: return "JPEG"
+        case .png: return L10n.png
+        case .tiff: return L10n.tiff
+        case .bmp: return L10n.bmp
+        case .gif: return L10n.gif
+        case .jpeg: return L10n.jpeg
         }
     }
 }
@@ -41,8 +41,8 @@ enum Display: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .internal: return "Internal"
-        case .external: return "External"
+        case .internal: return L10n.internal
+        case .external: return L10n.external
         }
     }
 }
@@ -56,9 +56,9 @@ enum Mask: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .ignored: return "Ignored"
-        case .alpha: return "Alpha"
-        case .black: return "Black"
+        case .ignored: return L10n.ignored
+        case .alpha: return L10n.alpha
+        case .black: return L10n.black
         }
     }
 }
@@ -71,10 +71,10 @@ enum DeviceFamily: String, CaseIterable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .iPhone: return "iPhone"
-        case .iPad: return "iPad"
-        case .tv: return "Apple TV"
-        case .watch: return "Apple Watch"
+        case .iPhone: return L10n.iphone
+        case .iPad: return L10n.ipad
+        case .tv: return L10n.appleTv
+        case .watch: return L10n.appleWatch
         }
     }
 }

@@ -6,20 +6,37 @@ import Foundation
 
 // MARK: - Models
 
-enum OperatorName: String, CaseIterable, Identifiable {
+enum OperatorName: String, CaseIterable, Identifiable, CustomStringConvertible {
     var id: Self { self }
-    case att = "AT&T"
-    case bell = "Bell"
-    case ee = "EE"
-    case o2 = "O2"
-    case orange = "Orange"
-    case rogers = "Rogers"
-    case sprint = "Sprint"
-    case telus = "Telus"
-    case three = "Three"
-    case tMobile = "T-Mobile"
-    case verizon = "Verizon"
-    case vodafone = "Vodafone"
+    case att
+    case bell
+    case ee
+    case o2
+    case orange
+    case rogers
+    case sprint
+    case telus
+    case three
+    case tMobile
+    case verizon
+    case vodafone
+
+    var description: String {
+        switch self {
+        case .att: return L10n.att
+        case .bell: return L10n.bell
+        case .ee: return L10n.ee
+        case .o2: return L10n.o2
+        case .orange: return L10n.orange
+        case .rogers: return L10n.rogers
+        case .sprint: return L10n.sprint
+        case .telus: return L10n.telus
+        case .three: return L10n.three
+        case .tMobile: return L10n.tmobile
+        case .verizon: return L10n.verizon
+        case .vodafone: return L10n.vodafone
+        }
+    }
 }
 
 enum DataNetwork: String, CaseIterable, Identifiable, CustomStringConvertible {
@@ -34,12 +51,12 @@ enum DataNetwork: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .wifi: return "WiFi"
-        case .threeG: return "3g"
-        case .fourG: return "4g"
-        case .lte: return "LTE"
-        case .lteA: return "LTE-A"
-        case .ltePlus: return "LTE+"
+        case .wifi: return L10n.wifi
+        case .threeG: return L10n._3g
+        case .fourG: return L10n._4g
+        case .lte: return L10n.lte
+        case .lteA: return L10n.lteA
+        case .ltePlus: return L10n.ltePlus
         }
     }
 }
@@ -64,10 +81,10 @@ enum CellularMode: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .notSupported: return "Not Supported"
-        case .searching: return "Searching"
-        case .failed: return "Failed"
-        case .active: return "Active"
+        case .notSupported: return L10n.notSupported
+        case .searching: return L10n.searching
+        case .failed: return L10n.failed
+        case .active: return L10n.active
         }
     }
 }
@@ -90,9 +107,9 @@ enum WifiMode: String, CaseIterable, Identifiable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .searching: return "Searching"
-        case .failed: return "Failed"
-        case .active: return "Active"
+        case .searching: return L10n.searching
+        case .failed: return L10n.failed
+        case .active: return L10n.active
         }
     }
 }
@@ -101,7 +118,7 @@ enum WifiMode: String, CaseIterable, Identifiable, CustomStringConvertible {
 
 struct NetworkState: Equatable {
     var selectedDevice: Device? = nil
-    var customOperatorName = "Carrier"
+    var customOperatorName = L10n.carrier
     var operatorName: OperatorName = .att
     var dataNetwork: DataNetwork = .wifi
     var wifiMode: WifiMode = .active
@@ -131,7 +148,7 @@ let networkReducer = Reducer<NetworkState, NetworkAction, AppEnvironment> { stat
 
     case let .setOperatorName(operatorName):
         state.operatorName = operatorName
-        return Effect(value: .setCustomOperatorName(operatorName.rawValue))
+        return Effect(value: .setCustomOperatorName(operatorName.description))
 
     case let .setDataNetwork(dataNetwork):
         guard let udid = state.selectedDevice?.udid else { return .none }

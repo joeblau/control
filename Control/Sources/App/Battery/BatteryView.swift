@@ -10,9 +10,9 @@ struct BatteryView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             Group {
-                GroupBox(label: Text("Connection").font(.headline).padding(.bottom, 6)) {
+                GroupBox(label: Text(L10n.connection).font(.headline).padding(.bottom, 6)) {
                     Form {
-                        Picker("State:", selection: viewStore.binding(get: { $0.chargeState }, send: { .setChargeState($0) })) {
+                        Picker(L10n.state, selection: viewStore.binding(get: { $0.chargeState }, send: { .setChargeState($0) })) {
                             ForEach(ChargeState.allCases) { Text($0.description) }
                         }
                         .pickerStyle(RadioGroupPickerStyle())
@@ -21,13 +21,13 @@ struct BatteryView: View {
                     .padding()
                 }
 
-                GroupBox(label: Text("Percentage: \(Int(round(viewStore.level)))%").font(.headline).padding(.bottom, 6)) {
+                GroupBox(label: Text(L10n.percentage(Int(round(viewStore.level)))).font(.headline).padding(.bottom, 6)) {
                     Form {
                         Slider(value: viewStore.binding(get: { $0.level }, send: { .setLevel($0) }),
                                in: 0 ... 100,
-                               minimumValueLabel: Text("0%"),
-                               maximumValueLabel: Text("100%")) {
-                            Text("Level:")
+                               minimumValueLabel: Text(L10n.zeroPercent),
+                               maximumValueLabel: Text(L10n.oneHundredPercent)) {
+                            Text(L10n.level)
                         }
                     }
                     .padding()
@@ -35,7 +35,7 @@ struct BatteryView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Battery")
+            .navigationTitle(L10n.battery)
         }
     }
 }

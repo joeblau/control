@@ -1,0 +1,6 @@
+strings:
+  - inputs: Control/Resources/Localizable.strings
+    filter: .+\.strings$
+    outputs:
+      - templateName: structured-swift4
+        output: Control/Generated/Strings.swift
