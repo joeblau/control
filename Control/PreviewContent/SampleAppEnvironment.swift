@@ -1,9 +1,5 @@
-//
-//  SampleAppEnvironment.swift
-//  Control
-//
-//  Created by Joe Blau on 11/22/20.
-//
+// SampleAppEnvironment.swift
+// Copyright (c) 2020 Joe Blau
 
 #if DEBUG
     let sampleAppEnvironment = AppEnvironment(locationManager: .unimplemented())

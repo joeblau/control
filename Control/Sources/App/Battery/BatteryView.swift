@@ -6,7 +6,7 @@ import SwiftUI
 
 struct BatteryView: View {
     let store: Store<BatteryState, BatteryAction>
-    
+
     var body: some View {
         WithViewStore(store) { viewStore in
             ScrollView {
@@ -21,7 +21,7 @@ struct BatteryView: View {
                         }
                         .padding()
                     }
-                    
+
                     GroupBox(label: Text(L10n.percentage(Int(round(viewStore.level)))).font(.headline).padding(.bottom, 6)) {
                         Form {
                             Slider(value: viewStore.binding(get: { $0.level }, send: { .setLevel($0) }),
@@ -42,9 +42,9 @@ struct BatteryView: View {
 }
 
 #if DEBUG
-struct BatteryView_Previews: PreviewProvider {
-    static var previews: some View {
-        BatteryView(store: sampleBatteryReducer)
+    struct BatteryView_Previews: PreviewProvider {
+        static var previews: some View {
+            BatteryView(store: sampleBatteryReducer)
+        }
     }
-}
 #endif

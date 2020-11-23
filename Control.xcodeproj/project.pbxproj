@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,43 +16,46 @@
 		15BF65E78B11CDDA467DC6FE /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF1CC7BEF02CFC6E7204115 /* SystemView.swift */; };
 		260E7400B080255D4BD0AF16 /* ScreenViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5C07EFA6C999EF374A736 /* ScreenViewReducer.swift */; };
 		2F04A14DC06E8501A957E880 /* AppsViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E532D831BE7A94DD9620B /* AppsViewReducer.swift */; };
+		3323FB88EAC156CEDDECDC15 /* SampleAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF37CEBEF1CE1C4F98D87C6 /* SampleAppEnvironment.swift */; };
 		340B7D918FBA2FFED7A9C6FB /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB2171AA492EF61459542A /* AppsView.swift */; };
 		3A67F2C65E65EBFCF92824EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25016EB3C65189AA0BA313AF /* Preview Assets.xcassets */; };
 		3E3E8FF7D740D5846D8579A4 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F87C960492546710B41972 /* LocationView.swift */; };
+		41008491F3FF2170C9E4D38B /* SampleSystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316057758F59BF670ECF1AEF /* SampleSystemViewReducer.swift */; };
 		4488B068A809634868C2DFE8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0087A41975729A5A2A44627A /* Constant.swift */; };
 		47B3E52FCFD5077FB587B5BC /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F90BD075CEC6358610264D /* ScreenView.swift */; };
+		47EBBD7ED5054D7BF1C1B478 /* SampleLocationViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D899BF5F51C475664504F37 /* SampleLocationViewReducer.swift */; };
 		557DF0451FC66EA92CF6D756 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56F83DA8A05F7089963308 /* VisualEffectBlur.swift */; };
-		571005ACB6BB03FAE1033185 /* DevicesViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421402E484FFAF28E0B3A18B /* DevicesViewReducer.swift */; };
 		65EAD3C55FF64A44206E8215 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42049E90CB7CE88F7C8C1256 /* Strings.swift */; };
+		82CDE16EF7B747A53E769FFF /* DevicesViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705AAB8714B27C4E37B71C8 /* DevicesViewReducer.swift */; };
 		8BD182B17ECC4DC5790EE144 /* SystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88357D0DFFAA90DC1BA33B /* SystemViewReducer.swift */; };
 		8FC23487BE978A42474255CC /* SampleControlViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE20ED3F75E1C25AA878F5 /* SampleControlViewReducer.swift */; };
-		965DFC3DE277A09FC7EB6D89 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB97ECF39F23C722234C2F /* DevicesView.swift */; };
+		A120051064CF8AAF35C505B3 /* SampleAppsViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1271F706C51E05D8DCECAA8 /* SampleAppsViewReducer.swift */; };
+		A142C181DCB51602FFAB1B91 /* SampleDevicesViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D536235A646A778E5807C8 /* SampleDevicesViewReducer.swift */; };
 		A7182087E2776BC8C7A8E803 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E712B7069710484855F97F4A /* ComposableArchitecture */; };
+		A8EDB2B5224758011C07FBC9 /* SampleScreenViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F4C58F604805276D6A11 /* SampleScreenViewReducer.swift */; };
 		AE3553C269CE9880D053D6DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6903D36A597465D1D2C2E94B /* Localizable.strings */; };
 		B5F2AE424722FE4116F33F46 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD854A0CCD885F82E62DAD9 /* BatteryView.swift */; };
+		B6ADDEB089AE863DAA547438 /* SampleNetworkViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F04A7156CF8C888AABCBE0 /* SampleNetworkViewReducer.swift */; };
 		C8D01DA443EC546B50EEDCE9 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49EF7F856D13EC3CCCE6A8 /* NetworkView.swift */; };
 		CD34BABF4C0E4DAB0E6FB5B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ABD4EE1136262D1FD8397D /* Assets.xcassets */; };
-		EDC40443256B90750076A699 /* LocationManagerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40442256B90750076A699 /* LocationManagerReducer.swift */; };
-		EDC40446256B91090076A699 /* SampleAppsViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40445256B91090076A699 /* SampleAppsViewReducer.swift */; };
-		EDC40449256B91120076A699 /* SampleBatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40448256B91120076A699 /* SampleBatteryViewReducer.swift */; };
-		EDC4044C256B911A0076A699 /* SampleDevicesViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4044B256B911A0076A699 /* SampleDevicesViewReducer.swift */; };
-		EDC4044F256B91240076A699 /* SampleLocationViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4044E256B91240076A699 /* SampleLocationViewReducer.swift */; };
-		EDC40454256B91410076A699 /* SampleNetworkViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40453256B91410076A699 /* SampleNetworkViewReducer.swift */; };
-		EDC40457256B914C0076A699 /* SampleScreenViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40456256B914C0076A699 /* SampleScreenViewReducer.swift */; };
-		EDC4045A256B91560076A699 /* SampleSystemViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC40459256B91560076A699 /* SampleSystemViewReducer.swift */; };
-		EDC4045D256B91A40076A699 /* SampleAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4045C256B91A40076A699 /* SampleAppEnvironment.swift */; };
+		E8250EEFC5FC0D6F20548C2E /* SampleBatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F35FC2D651125AE2ACAF32 /* SampleBatteryViewReducer.swift */; };
 		F1DC4176A3717D82ACA39E54 /* BatteryViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B675161120D817C563EA1FE /* BatteryViewReducer.swift */; };
+		F52CAA00B6851EE8F47954F0 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F791D0F86694F9A3970D /* DevicesView.swift */; };
 		FA97CB8A4CC00FD78B568C88 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 751BD96142A64FE2CBA109F3 /* ComposableCoreLocation */; };
+		FC3AB5E7B58ACFD673EF0005 /* LocationManagerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30420675973918253D9E702 /* LocationManagerReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0087A41975729A5A2A44627A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		00A59470A5DC84227CCC561D /* Process+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+Extensions.swift"; sourceTree = "<group>"; };
 		13817254EDA7BABFC01DB855 /* ControlAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlAppView.swift; sourceTree = "<group>"; };
+		24F35FC2D651125AE2ACAF32 /* SampleBatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBatteryViewReducer.swift; sourceTree = "<group>"; };
 		25016EB3C65189AA0BA313AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		316057758F59BF670ECF1AEF /* SampleSystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSystemViewReducer.swift; sourceTree = "<group>"; };
+		3772F791D0F86694F9A3970D /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		38F04A7156CF8C888AABCBE0 /* SampleNetworkViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNetworkViewReducer.swift; sourceTree = "<group>"; };
 		3AC5C07EFA6C999EF374A736 /* ScreenViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewReducer.swift; sourceTree = "<group>"; };
 		42049E90CB7CE88F7C8C1256 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		421402E484FFAF28E0B3A18B /* DevicesViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewReducer.swift; sourceTree = "<group>"; };
 		450933C0CE81A57BC264BDB4 /* Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Control.entitlements; sourceTree = "<group>"; };
 		47F87C960492546710B41972 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		5B675161120D817C563EA1FE /* BatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewReducer.swift; sourceTree = "<group>"; };
@@ -60,27 +63,24 @@
 		8B88357D0DFFAA90DC1BA33B /* SystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewReducer.swift; sourceTree = "<group>"; };
 		92B6C6A697D1CD6329ECF5AF /* LocationViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewReducer.swift; sourceTree = "<group>"; };
 		96F90BD075CEC6358610264D /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		9D899BF5F51C475664504F37 /* SampleLocationViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLocationViewReducer.swift; sourceTree = "<group>"; };
+		A1271F706C51E05D8DCECAA8 /* SampleAppsViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppsViewReducer.swift; sourceTree = "<group>"; };
 		A5EE076146E3F608F3284E0D /* ControlAppViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlAppViewReducer.swift; sourceTree = "<group>"; };
+		ADF37CEBEF1CE1C4F98D87C6 /* SampleAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppEnvironment.swift; sourceTree = "<group>"; };
 		AE3E532D831BE7A94DD9620B /* AppsViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewReducer.swift; sourceTree = "<group>"; };
 		AEDE20ED3F75E1C25AA878F5 /* SampleControlViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleControlViewReducer.swift; sourceTree = "<group>"; };
 		AEF1CC7BEF02CFC6E7204115 /* SystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
 		AFAB2171AA492EF61459542A /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
 		C426072493DB2550DCF5C7F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C4D536235A646A778E5807C8 /* SampleDevicesViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDevicesViewReducer.swift; sourceTree = "<group>"; };
 		C9ABD4EE1136262D1FD8397D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4464FC0D810DA7ADDAF0247 /* NetworkViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewReducer.swift; sourceTree = "<group>"; };
 		DB56F83DA8A05F7089963308 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		DE30E685C1C5DE2682AE23DE /* Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Control.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3FB97ECF39F23C722234C2F /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		E88BD714FBA55242BFB983AB /* ControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlApp.swift; sourceTree = "<group>"; };
-		EDC40442256B90750076A699 /* LocationManagerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerReducer.swift; sourceTree = "<group>"; };
-		EDC40445256B91090076A699 /* SampleAppsViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppsViewReducer.swift; sourceTree = "<group>"; };
-		EDC40448256B91120076A699 /* SampleBatteryViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBatteryViewReducer.swift; sourceTree = "<group>"; };
-		EDC4044B256B911A0076A699 /* SampleDevicesViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDevicesViewReducer.swift; sourceTree = "<group>"; };
-		EDC4044E256B91240076A699 /* SampleLocationViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLocationViewReducer.swift; sourceTree = "<group>"; };
-		EDC40453256B91410076A699 /* SampleNetworkViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNetworkViewReducer.swift; sourceTree = "<group>"; };
-		EDC40456256B914C0076A699 /* SampleScreenViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScreenViewReducer.swift; sourceTree = "<group>"; };
-		EDC40459256B91560076A699 /* SampleSystemViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSystemViewReducer.swift; sourceTree = "<group>"; };
-		EDC4045C256B91A40076A699 /* SampleAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppEnvironment.swift; sourceTree = "<group>"; };
+		F0D5F4C58F604805276D6A11 /* SampleScreenViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScreenViewReducer.swift; sourceTree = "<group>"; };
+		F30420675973918253D9E702 /* LocationManagerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerReducer.swift; sourceTree = "<group>"; };
+		F705AAB8714B27C4E37B71C8 /* DevicesViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewReducer.swift; sourceTree = "<group>"; };
 		FAD854A0CCD885F82E62DAD9 /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		FC49EF7F856D13EC3CCCE6A8 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,8 +118,8 @@
 		1605A3BE28CD442F12254CD2 /* Devices */ = {
 			isa = PBXGroup;
 			children = (
-				E3FB97ECF39F23C722234C2F /* DevicesView.swift */,
-				421402E484FFAF28E0B3A18B /* DevicesViewReducer.swift */,
+				3772F791D0F86694F9A3970D /* DevicesView.swift */,
+				F705AAB8714B27C4E37B71C8 /* DevicesViewReducer.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -128,15 +128,15 @@
 			isa = PBXGroup;
 			children = (
 				25016EB3C65189AA0BA313AF /* Preview Assets.xcassets */,
+				ADF37CEBEF1CE1C4F98D87C6 /* SampleAppEnvironment.swift */,
+				A1271F706C51E05D8DCECAA8 /* SampleAppsViewReducer.swift */,
+				24F35FC2D651125AE2ACAF32 /* SampleBatteryViewReducer.swift */,
 				AEDE20ED3F75E1C25AA878F5 /* SampleControlViewReducer.swift */,
-				EDC40445256B91090076A699 /* SampleAppsViewReducer.swift */,
-				EDC40448256B91120076A699 /* SampleBatteryViewReducer.swift */,
-				EDC4044B256B911A0076A699 /* SampleDevicesViewReducer.swift */,
-				EDC4044E256B91240076A699 /* SampleLocationViewReducer.swift */,
-				EDC40453256B91410076A699 /* SampleNetworkViewReducer.swift */,
-				EDC40456256B914C0076A699 /* SampleScreenViewReducer.swift */,
-				EDC40459256B91560076A699 /* SampleSystemViewReducer.swift */,
-				EDC4045C256B91A40076A699 /* SampleAppEnvironment.swift */,
+				C4D536235A646A778E5807C8 /* SampleDevicesViewReducer.swift */,
+				9D899BF5F51C475664504F37 /* SampleLocationViewReducer.swift */,
+				38F04A7156CF8C888AABCBE0 /* SampleNetworkViewReducer.swift */,
+				F0D5F4C58F604805276D6A11 /* SampleScreenViewReducer.swift */,
+				316057758F59BF670ECF1AEF /* SampleSystemViewReducer.swift */,
 			);
 			path = PreviewContent;
 			sourceTree = "<group>";
@@ -228,6 +228,7 @@
 				E88BD714FBA55242BFB983AB /* ControlApp.swift */,
 				13817254EDA7BABFC01DB855 /* ControlAppView.swift */,
 				A5EE076146E3F608F3284E0D /* ControlAppViewReducer.swift */,
+				F30420675973918253D9E702 /* LocationManagerReducer.swift */,
 				E0D0EB6F9A91E97BFC348218 /* Apps */,
 				3551A600D94931370FF19923 /* Battery */,
 				1605A3BE28CD442F12254CD2 /* Devices */,
@@ -235,7 +236,6 @@
 				C93F970A85CC62AE7212D364 /* Network */,
 				6A52FBC1065E624A293C6F69 /* Screen */,
 				3E006D8919309859A148F82B /* System */,
-				EDC40442256B90750076A699 /* LocationManagerReducer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -267,6 +267,15 @@
 				AE3E532D831BE7A94DD9620B /* AppsViewReducer.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		"TEMP_8F2C2A84-5C4E-493A-8C8A-D81B06165AC5" /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9ABD4EE1136262D1FD8397D /* Assets.xcassets */,
+				6903D36A597465D1D2C2E94B /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +326,7 @@
 			mainGroup = 0BB2F14A302696AFBDE7FD3D;
 			packageReferences = (
 				80A7D4AE45B9D2694CBAB2BF /* XCRemoteSwiftPackageReference "composable-core-location" */,
-				9E79DF031969F981A01A8BCB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				27A1CCF17870313668088CA7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -346,34 +355,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				340B7D918FBA2FFED7A9C6FB /* AppsView.swift in Sources */,
-				EDC4044C256B911A0076A699 /* SampleDevicesViewReducer.swift in Sources */,
 				2F04A14DC06E8501A957E880 /* AppsViewReducer.swift in Sources */,
 				B5F2AE424722FE4116F33F46 /* BatteryView.swift in Sources */,
-				EDC4044F256B91240076A699 /* SampleLocationViewReducer.swift in Sources */,
 				F1DC4176A3717D82ACA39E54 /* BatteryViewReducer.swift in Sources */,
-				EDC4045A256B91560076A699 /* SampleSystemViewReducer.swift in Sources */,
 				4488B068A809634868C2DFE8 /* Constant.swift in Sources */,
 				0FF214FF133740A0DD476AF5 /* ControlApp.swift in Sources */,
 				03139DD8DF5EAEC28855804F /* ControlAppView.swift in Sources */,
-				EDC4045D256B91A40076A699 /* SampleAppEnvironment.swift in Sources */,
 				13F35BD72A7A5E3F092F985A /* ControlAppViewReducer.swift in Sources */,
-				965DFC3DE277A09FC7EB6D89 /* DevicesView.swift in Sources */,
-				EDC40457256B914C0076A699 /* SampleScreenViewReducer.swift in Sources */,
-				571005ACB6BB03FAE1033185 /* DevicesViewReducer.swift in Sources */,
+				F52CAA00B6851EE8F47954F0 /* DevicesView.swift in Sources */,
+				82CDE16EF7B747A53E769FFF /* DevicesViewReducer.swift in Sources */,
+				FC3AB5E7B58ACFD673EF0005 /* LocationManagerReducer.swift in Sources */,
 				3E3E8FF7D740D5846D8579A4 /* LocationView.swift in Sources */,
 				12C007E7EDBAF8E282D429B0 /* LocationViewReducer.swift in Sources */,
-				EDC40454256B91410076A699 /* SampleNetworkViewReducer.swift in Sources */,
 				C8D01DA443EC546B50EEDCE9 /* NetworkView.swift in Sources */,
 				150B01F90DC90B6C376DC58B /* NetworkViewReducer.swift in Sources */,
 				0191A3B40922DAA84AB26DF1 /* Process+Extensions.swift in Sources */,
+				3323FB88EAC156CEDDECDC15 /* SampleAppEnvironment.swift in Sources */,
+				A120051064CF8AAF35C505B3 /* SampleAppsViewReducer.swift in Sources */,
+				E8250EEFC5FC0D6F20548C2E /* SampleBatteryViewReducer.swift in Sources */,
 				8FC23487BE978A42474255CC /* SampleControlViewReducer.swift in Sources */,
+				A142C181DCB51602FFAB1B91 /* SampleDevicesViewReducer.swift in Sources */,
+				47EBBD7ED5054D7BF1C1B478 /* SampleLocationViewReducer.swift in Sources */,
+				B6ADDEB089AE863DAA547438 /* SampleNetworkViewReducer.swift in Sources */,
+				A8EDB2B5224758011C07FBC9 /* SampleScreenViewReducer.swift in Sources */,
+				41008491F3FF2170C9E4D38B /* SampleSystemViewReducer.swift in Sources */,
 				47B3E52FCFD5077FB587B5BC /* ScreenView.swift in Sources */,
-				EDC40446256B91090076A699 /* SampleAppsViewReducer.swift in Sources */,
 				260E7400B080255D4BD0AF16 /* ScreenViewReducer.swift in Sources */,
 				65EAD3C55FF64A44206E8215 /* Strings.swift in Sources */,
-				EDC40443256B90750076A699 /* LocationManagerReducer.swift in Sources */,
 				15BF65E78B11CDDA467DC6FE /* SystemView.swift in Sources */,
-				EDC40449256B91120076A699 /* SampleBatteryViewReducer.swift in Sources */,
 				8BD182B17ECC4DC5790EE144 /* SystemViewReducer.swift in Sources */,
 				557DF0451FC66EA92CF6D756 /* VisualEffectBlur.swift in Sources */,
 			);
@@ -565,20 +574,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		27A1CCF17870313668088CA7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 		80A7D4AE45B9D2694CBAB2BF /* XCRemoteSwiftPackageReference "composable-core-location" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/composable-core-location";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.1.0;
-			};
-		};
-		9E79DF031969F981A01A8BCB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@gitlab.com:submap/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -591,7 +600,7 @@
 		};
 		E712B7069710484855F97F4A /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9E79DF031969F981A01A8BCB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 27A1CCF17870313668088CA7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */

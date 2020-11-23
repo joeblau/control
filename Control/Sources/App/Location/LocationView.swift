@@ -20,9 +20,9 @@ struct LocationView: View {
 }
 
 #if DEBUG
- struct LocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationView(store: sampleLocationReducer)
+    struct LocationView_Previews: PreviewProvider {
+        static var previews: some View {
+            LocationView(store: sampleLocationReducer)
+        }
     }
- }
 #endif

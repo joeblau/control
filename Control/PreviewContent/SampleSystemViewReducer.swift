@@ -1,14 +1,10 @@
-//
-//  SampleSystemViewReducer.swift
-//  Control
-//
-//  Created by Joe Blau on 11/22/20.
-//
+// SampleSystemViewReducer.swift
+// Copyright (c) 2020 Joe Blau
 
 import ComposableArchitecture
 
 #if DEBUG
     let sampleSystemReducer = Store(initialState: SystemState(),
-                               reducer: systemReducer,
-                               environment: sampleAppEnvironment)
+                                    reducer: systemReducer,
+                                    environment: sampleAppEnvironment)
 #endif

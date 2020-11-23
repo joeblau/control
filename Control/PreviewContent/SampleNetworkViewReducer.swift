@@ -1,14 +1,10 @@
-//
-//  SampleNetworkViewReducer.swift
-//  Control
-//
-//  Created by Joe Blau on 11/22/20.
-//
+// SampleNetworkViewReducer.swift
+// Copyright (c) 2020 Joe Blau
 
 import ComposableArchitecture
 
 #if DEBUG
     let sampleNetworkReducer = Store(initialState: NetworkState(),
-                               reducer: networkReducer,
-                               environment: sampleAppEnvironment)
+                                     reducer: networkReducer,
+                                     environment: sampleAppEnvironment)
 #endif

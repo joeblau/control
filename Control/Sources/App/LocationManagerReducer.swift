@@ -1,14 +1,10 @@
-//
-//  LocationManagerReducer.swift
-//  Control
-//
-//  Created by Joe Blau on 11/22/20.
-//
+// LocationManagerReducer.swift
+// Copyright (c) 2020 Joe Blau
 
-import Foundation
 import ComposableArchitecture
 import ComposableCoreLocation
+import Foundation
 
 let locationManagerReducer = Reducer<AppState, LocationManager.Action, AppEnvironment> { _, _, _ in
-    return .none
+    .none
 }

@@ -41,7 +41,7 @@ enum AppAction: Equatable {
     case locationAction(LocationAction)
     case networkAction(NetworkAction)
     case screenAction(ScreenAction)
-    
+
     case locationManagerAction(LocationManager.Action)
 
     case setSelectedDashboard(Dashboard)
@@ -77,10 +77,10 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
             break
         }
         return environment.locationManager.create(id: LocationManagerId()).map(AppAction.locationManagerAction)
-    
+
     case .onInactive:
         return environment.locationManager.destroy(id: LocationManagerId()).fireAndForget()
-        
+
     default:
         return .none
     }
@@ -107,5 +107,5 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
                                        action: /AppAction.screenAction,
                                        environment: { $0 }))
 .combined(with: locationManagerReducer.pullback(state: \.self,
-                                         action: /AppAction.locationManagerAction,
-                                         environment: { $0 }))
+                                                action: /AppAction.locationManagerAction,
+                                                environment: { $0 }))

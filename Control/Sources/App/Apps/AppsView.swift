@@ -13,9 +13,9 @@ struct AppsView: View {
 }
 
 #if DEBUG
- struct AppsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AppsView(store: sampleAppsEnvironment)
+    struct AppsView_Previews: PreviewProvider {
+        static var previews: some View {
+            AppsView(store: sampleAppsEnvironment)
+        }
     }
- }
 #endif

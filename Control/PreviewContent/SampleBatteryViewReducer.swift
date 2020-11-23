@@ -1,14 +1,10 @@
-//
-//  SampleBatteryViewReducer.swift
-//  Control
-//
-//  Created by Joe Blau on 11/22/20.
-//
+// SampleBatteryViewReducer.swift
+// Copyright (c) 2020 Joe Blau
 
 import ComposableArchitecture
 
 #if DEBUG
     let sampleBatteryReducer = Store(initialState: BatteryState(),
-                               reducer: batteryReducer,
-                               environment: sampleAppEnvironment)
+                                     reducer: batteryReducer,
+                                     environment: sampleAppEnvironment)
 #endif

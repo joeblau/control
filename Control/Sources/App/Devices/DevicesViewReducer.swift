@@ -1,4 +1,4 @@
-// DeviceViewReducer.swift
+// DevicesViewReducer.swift
 // Copyright (c) 2020 Joe Blau
 
 import ComposableArchitecture

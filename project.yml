@@ -12,7 +12,7 @@ options:
   postGenCommand: .github/scripts/post.sh
 packages:
   swift-composable-architecture:
-    url: git@gitlab.com:submap/swift-composable-architecture
+    url: https://github.com/pointfreeco/swift-composable-architecture
     from: 0.9.0
   composable-core-location:
     url: https://github.com/pointfreeco/composable-core-location

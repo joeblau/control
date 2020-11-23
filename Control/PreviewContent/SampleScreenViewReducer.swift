@@ -1,14 +1,10 @@
-//
-//  SampleScreenViewReducer.swift
-//  Control
-//
-//  Created by Joe Blau on 11/22/20.
-//
+// SampleScreenViewReducer.swift
+// Copyright (c) 2020 Joe Blau
 
 import ComposableArchitecture
 
 #if DEBUG
     let sampleScreenReducer = Store(initialState: ScreenState(),
-                               reducer: screenReducer,
-                               environment: sampleAppEnvironment)
+                                    reducer: screenReducer,
+                                    environment: sampleAppEnvironment)
 #endif
