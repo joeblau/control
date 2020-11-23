@@ -3,6 +3,7 @@
 
 import AppKit
 import ComposableArchitecture
+import ComposableCoreLocation
 import Foundation
 
 // MARK: - Models
@@ -13,7 +14,7 @@ enum Dashboard: String, Equatable, CaseIterable, Identifiable {
     case system = "gearshape"
     case apps = "app.badge"
     case battery = "minus.plus.batteryblock"
-    case location
+    case location = "map"
     case network
     case screen = "display"
 }
@@ -40,6 +41,8 @@ enum AppAction: Equatable {
     case locationAction(LocationAction)
     case networkAction(NetworkAction)
     case screenAction(ScreenAction)
+    
+    case locationManagerAction(LocationManager.Action)
 
     case setSelectedDashboard(Dashboard)
 
@@ -49,10 +52,10 @@ enum AppAction: Equatable {
 }
 
 struct AppEnvironment {
-    var selectedDevice: Device?
+    var locationManager: LocationManager
 }
 
-let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, _ in
+let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
     switch action {
     case let .devicesAction(.selectDevice(device)):
         state.systemState.selectedDevice = device
@@ -73,8 +76,11 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
         case .none:
             break
         }
-        return .none
-
+        return environment.locationManager.create(id: LocationManagerId()).map(AppAction.locationManagerAction)
+    
+    case .onInactive:
+        return environment.locationManager.destroy(id: LocationManagerId()).fireAndForget()
+        
     default:
         return .none
     }
@@ -100,3 +106,6 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
 .combined(with: screenReducer.pullback(state: \.screenState,
                                        action: /AppAction.screenAction,
                                        environment: { $0 }))
+.combined(with: locationManagerReducer.pullback(state: \.self,
+                                         action: /AppAction.locationManagerAction,
+                                         environment: { $0 }))

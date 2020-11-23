@@ -13,7 +13,10 @@ options:
 packages:
   swift-composable-architecture:
     url: git@gitlab.com:submap/swift-composable-architecture
-    branch: 0.9.0
+    from: 0.9.0
+  composable-core-location:
+    url: https://github.com/pointfreeco/composable-core-location
+    from: 0.1.0
 targets:
   Control:
     type: application
@@ -32,3 +35,5 @@ targets:
     dependencies:
       - package: swift-composable-architecture
         product: ComposableArchitecture
+      - package: composable-core-location
+        product: ComposableCoreLocation

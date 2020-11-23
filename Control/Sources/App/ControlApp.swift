@@ -10,7 +10,7 @@ struct ControlApp: App {
 
     let store = Store(initialState: AppState(),
                       reducer: controlAppReducer,
-                      environment: AppEnvironment())
+                      environment: AppEnvironment(locationManager: .live))
 
     var body: some Scene {
         WindowGroup {

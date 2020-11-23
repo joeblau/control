@@ -9,3 +9,5 @@ struct Constant {
     static var watch: String = "Watch"
     static var tv: String = "TV"
 }
+
+struct LocationManagerId: Hashable {}
