@@ -62,6 +62,7 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
         state.batteryState.selectedDevice = device
         state.networkState.selectedDevice = device
         state.screenState.selectedDevice = device
+        state.locationState.selectedDevice = device
 
         return .none
 
@@ -76,7 +77,11 @@ let controlAppReducer = Reducer<AppState, AppAction, AppEnvironment> { state, ac
         case .none:
             break
         }
-        return environment.locationManager.create(id: LocationManagerId()).map(AppAction.locationManagerAction)
+        return .merge(
+            environment.locationManager.create(id: LocationManagerId()).map(AppAction.locationManagerAction),
+            environment.locationManager.requestAlwaysAuthorization(id: LocationManagerId()).fireAndForget(),
+            environment.locationManager.startUpdatingLocation(id: LocationManagerId()).fireAndForget()
+        )
 
     case .onInactive:
         return environment.locationManager.destroy(id: LocationManagerId()).fireAndForget()
