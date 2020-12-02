@@ -18,7 +18,7 @@ internal enum L10n {
   internal static let active = L10n.tr("Localizable", "active")
   /// Alpha
   internal static let alpha = L10n.tr("Localizable", "alpha")
-  /// Appearance
+  /// Appearance:
   internal static let appearance = L10n.tr("Localizable", "appearance")
   /// Apple TV
   internal static let appleTv = L10n.tr("Localizable", "apple_tv")
@@ -28,6 +28,10 @@ internal enum L10n {
   internal static let att = L10n.tr("Localizable", "att")
   /// Battery
   internal static let battery = L10n.tr("Localizable", "battery")
+  /// Battery Level:
+  internal static let batteryLevel = L10n.tr("Localizable", "battery_level")
+  /// Battery State:
+  internal static let batteryState = L10n.tr("Localizable", "battery_state")
   /// Bell
   internal static let bell = L10n.tr("Localizable", "bell")
   /// Black
@@ -40,8 +44,10 @@ internal enum L10n {
   internal static let booting = L10n.tr("Localizable", "booting")
   /// Carrier
   internal static let carrier = L10n.tr("Localizable", "carrier")
-  /// Cellular
-  internal static let cellular = L10n.tr("Localizable", "cellular")
+  /// Cellular Mode:
+  internal static let cellularMode = L10n.tr("Localizable", "cellular_mode")
+  /// Cellular Signal:
+  internal static let cellularSignal = L10n.tr("Localizable", "cellular_signal")
   /// Charged
   internal static let charged = L10n.tr("Localizable", "charged")
   /// Charging
@@ -52,12 +58,10 @@ internal enum L10n {
   internal static let creating = L10n.tr("Localizable", "creating")
   /// Dark
   internal static let dark = L10n.tr("Localizable", "dark")
-  /// Date/Time
+  /// Date/Time:
   internal static let dateTime = L10n.tr("Localizable", "date_time")
   /// Discharging
   internal static let discharging = L10n.tr("Localizable", "discharging")
-  /// Display
-  internal static let display = L10n.tr("Localizable", "display")
   /// EE
   internal static let ee = L10n.tr("Localizable", "ee")
   /// External
@@ -66,8 +70,6 @@ internal enum L10n {
   internal static let failed = L10n.tr("Localizable", "failed")
   /// Filter booted devices
   internal static let filterBootedDevices = L10n.tr("Localizable", "filter_booted_devices")
-  /// Format:
-  internal static let format = L10n.tr("Localizable", "format")
   /// GIF
   internal static let gif = L10n.tr("Localizable", "gif")
   /// Ignored
@@ -82,8 +84,6 @@ internal enum L10n {
   internal static let jpeg = L10n.tr("Localizable", "jpeg")
   /// Language:
   internal static let language = L10n.tr("Localizable", "language")
-  /// Level:
-  internal static let level = L10n.tr("Localizable", "level")
   /// Light
   internal static let light = L10n.tr("Localizable", "light")
   /// Locale:
@@ -98,13 +98,9 @@ internal enum L10n {
   internal static let lteA = L10n.tr("Localizable", "lte_a")
   /// LTE+
   internal static let ltePlus = L10n.tr("Localizable", "lte_plus")
-  /// Mask:
-  internal static let mask = L10n.tr("Localizable", "mask")
-  /// Mode:
-  internal static let mode = L10n.tr("Localizable", "mode")
   /// Network
   internal static let network = L10n.tr("Localizable", "network")
-  /// Network Type
+  /// Network Type:
   internal static let networkType = L10n.tr("Localizable", "network_type")
   /// No devices
   internal static let noDevices = L10n.tr("Localizable", "no_devices")
@@ -130,8 +126,14 @@ internal enum L10n {
   internal static let rogers = L10n.tr("Localizable", "rogers")
   /// Screen
   internal static let screen = L10n.tr("Localizable", "screen")
-  /// Screen shot
-  internal static let screenShot = L10n.tr("Localizable", "screen_shot")
+  /// Screenshot
+  internal static let screenshot = L10n.tr("Localizable", "screenshot")
+  /// Display:
+  internal static let screenshotDisplay = L10n.tr("Localizable", "screenshot_display")
+  /// Format:
+  internal static let screenshotFormat = L10n.tr("Localizable", "screenshot_format")
+  /// Mask:
+  internal static let screenshotMask = L10n.tr("Localizable", "screenshot_mask")
   /// Searching
   internal static let searching = L10n.tr("Localizable", "searching")
   /// Select device
@@ -148,12 +150,8 @@ internal enum L10n {
   internal static let shutdown = L10n.tr("Localizable", "shutdown")
   /// Shutting Down
   internal static let shuttingDown = L10n.tr("Localizable", "shutting_down")
-  /// Signal:
-  internal static let signal = L10n.tr("Localizable", "signal")
   /// Sprint
   internal static let sprint = L10n.tr("Localizable", "sprint")
-  /// State:
-  internal static let state = L10n.tr("Localizable", "state")
   /// System
   internal static let system = L10n.tr("Localizable", "system")
   /// Take Screen shot
@@ -174,6 +172,10 @@ internal enum L10n {
   internal static let vodafone = L10n.tr("Localizable", "vodafone")
   /// WiFi
   internal static let wifi = L10n.tr("Localizable", "wifi")
+  /// WiFi Mode:
+  internal static let wifiMode = L10n.tr("Localizable", "wifi_mode")
+  /// WiFi Signal:
+  internal static let wifiSignal = L10n.tr("Localizable", "wifi_signal")
   /// 0%%
   internal static let zeroPercent = L10n.tr("Localizable", "zero_percent")
 }

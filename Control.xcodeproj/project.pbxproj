@@ -269,7 +269,7 @@
 			path = Apps;
 			sourceTree = "<group>";
 		};
-		"TEMP_8F2C2A84-5C4E-493A-8C8A-D81B06165AC5" /* Resources */ = {
+		"TEMP_CF823AD9-EF67-47B0-8698-4AF4A5FE8FA5" /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				C9ABD4EE1136262D1FD8397D /* Assets.xcassets */,

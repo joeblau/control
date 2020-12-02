@@ -10,28 +10,26 @@ struct ScreenView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             ScrollView {
-                VStack {
-                    GroupBox(label: Text(L10n.screenShot).font(.headline).padding(.bottom, 6)) {
-                        Form {
-                            Picker(L10n.format, selection: viewStore.binding(get: { $0.type }, send: { .setType($0) })) {
-                                ForEach(ImageFormat.allCases) { Text($0.description) }
-                            }
-
-                            if let type = viewStore.selectedDevice?.type, type == .iPad || type == .iPhone {
-                                Picker(L10n.display, selection: viewStore.binding(get: { $0.display }, send: { .setDisplay($0) })) {
-                                    ForEach(Display.allCases) { Text($0.description) }
-                                }
-                            }
-
-                            Picker(L10n.mask, selection: viewStore.binding(get: { $0.mask }, send: { .setMask($0) })) {
-                                ForEach(Mask.allCases) { Text($0.description) }
-                            }
-
-                            Button(L10n.takeScreenShot, action: { viewStore.send(.takeScreenshot) })
+                Form {
+                    Section(header: Text(L10n.screenshot).font(.headline)) {
+                        Picker(L10n.screenshotFormat, selection: viewStore.binding(get: { $0.type }, send: { .setType($0) })) {
+                            ForEach(ImageFormat.allCases) { Text($0.description) }
                         }
-                        .padding()
+
+                        if let type = viewStore.selectedDevice?.type, type == .iPad || type == .iPhone {
+                            Picker(L10n.screenshotDisplay, selection: viewStore.binding(get: { $0.display }, send: { .setDisplay($0) })) {
+                                ForEach(Display.allCases) { Text($0.description) }
+                            }
+                        }
+
+                        Picker(L10n.screenshotMask, selection: viewStore.binding(get: { $0.mask }, send: { .setMask($0) })) {
+                            ForEach(Mask.allCases) { Text($0.description) }
+                        }
+
+                        Button(L10n.takeScreenShot, action: { viewStore.send(.takeScreenshot) })
                     }
-                }.padding()
+                }
+                .padding()
             }
             .navigationTitle(L10n.screen)
         }

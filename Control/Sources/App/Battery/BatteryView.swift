@@ -10,28 +10,21 @@ struct BatteryView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             ScrollView {
-                VStack {
-                    GroupBox(label: Text(L10n.connection).font(.headline).padding(.bottom, 6)) {
-                        Form {
-                            Picker(L10n.state, selection: viewStore.binding(get: { $0.chargeState }, send: { .setChargeState($0) })) {
-                                ForEach(ChargeState.allCases) { Text($0.description) }
-                            }
-                            .pickerStyle(RadioGroupPickerStyle())
-                            VStack {}.frame(maxWidth: .infinity)
-                        }
-                        .padding()
+                Form {
+                    Picker(L10n.batteryState, selection: viewStore.binding(get: { $0.chargeState }, send: { .setChargeState($0) })) {
+                        ForEach(ChargeState.allCases) { Text($0.description) }
                     }
+                    .pickerStyle(RadioGroupPickerStyle())
 
-                    GroupBox(label: Text(L10n.percentage(Int(round(viewStore.level)))).font(.headline).padding(.bottom, 6)) {
-                        Form {
-                            Slider(value: viewStore.binding(get: { $0.level }, send: { .setLevel($0) }),
-                                   in: 0 ... 100,
-                                   minimumValueLabel: Text(L10n.zeroPercent),
-                                   maximumValueLabel: Text(L10n.oneHundredPercent)) {
-                                Text(L10n.level)
-                            }
-                        }
-                        .padding()
+                    Divider().padding(.vertical, 10)
+
+                    Text(L10n.percentage(Int(round(viewStore.level))))
+
+                    Slider(value: viewStore.binding(get: { $0.level }, send: { .setLevel($0) }),
+                           in: 0 ... 100,
+                           minimumValueLabel: Text(L10n.zeroPercent),
+                           maximumValueLabel: Text(L10n.oneHundredPercent)) {
+                        Text(L10n.batteryLevel)
                     }
                 }
                 .padding()
