@@ -26,13 +26,35 @@ struct MapView: NSViewRepresentable {
         doubleClick.numberOfClicksRequired = 2
         
         mapView.addGestureRecognizer(doubleClick)
+        
+        
+        ViewStore(store).publisher
+            .annotationItems
+            .compactMap { $0 }
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { items in
+                mapView.removeAnnotations(mapView.annotations)
+                
+                mapView.addAnnotations(items.map { MKPointAnnotation(__coordinate: $0.coordinate) })
+            })
+            .store(in: &cancellables)
+        
+        ViewStore(store).publisher
+            .region
+            .compactMap { $0 }
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { region in
+                mapView.region = region
+            })
+            .store(in: &cancellables)
+        
         return mapView
     }
     
     
-    func updateNSView(_ mapView: MKMapView, context _: Context) {
-        mapView.region = ViewStore(store).region
-    }
+    func updateNSView(_ mapView: MKMapView, context _: Context) {}
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -52,11 +74,6 @@ struct MapView: NSViewRepresentable {
         @objc func addNewAnnotation(recognizer: NSGestureRecognizer) {
             let location = recognizer.location(in: parent.mapView)
             let coordinate = parent.mapView.convert(location, toCoordinateFrom: parent.mapView)
-            
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            parent.mapView.addAnnotation(annotation)
-            
             ViewStore(parent.store).send(.addAnnotation(coordinate))
         }
         

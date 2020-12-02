@@ -24,11 +24,16 @@ struct LocationState: Equatable {
 enum LocationAction: Equatable {
     case updateRegion(MKCoordinateRegion)
     case addAnnotation(CLLocationCoordinate2D)
+    case removeAllAnnotations
 }
 
 let locationReducer = Reducer<LocationState, LocationAction, AppEnvironment> { state, action, _ in
     switch action {
     case .updateRegion:
+        return .none
+
+    case .removeAllAnnotations:
+        state.annotationItems.removeAll()
         return .none
         
     case let .addAnnotation(coordinate):
@@ -48,6 +53,7 @@ let locationReducer = Reducer<LocationState, LocationAction, AppEnvironment> { s
                                             userInfo: userInfo)
 
             DistributedNotificationCenter.default().post(notification)
+            state.annotationItems.append(MyAnnotationItem(coordinate: coordinate))
         case .none:
             break
         

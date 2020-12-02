@@ -10,8 +10,21 @@ struct LocationView: View {
     let store: Store<LocationState, LocationAction>
 
     var body: some View {
+        WithViewStore(store) { viewStore in
             
-        MapView(store: store)
+            MapView(store: store)
+                .toolbar {
+                    ToolbarItem(placement: .automatic) {
+                        Spacer()
+                    }
+                    ToolbarItemGroup(placement: .primaryAction) {
+                        Button(action: { viewStore.send(.removeAllAnnotations) }) {
+                            Image(systemName: "clear")
+                        }
+                        .disabled(viewStore.selectedDevice == nil)
+                    }
+                }
+        }
     }
 }
 
