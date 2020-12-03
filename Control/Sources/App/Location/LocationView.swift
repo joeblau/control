@@ -11,7 +11,7 @@ struct LocationView: View {
 
     var body: some View {
         WithViewStore(store) { viewStore in
-            
+
             MapView(store: store)
                 .toolbar {
                     ToolbarItem(placement: .automatic) {

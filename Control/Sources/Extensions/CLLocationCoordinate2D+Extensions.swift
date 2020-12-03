@@ -1,9 +1,5 @@
-//
-//  CLLocationCoordinate2D+Extensions.swift
-//  Control
-//
-//  Created by Joe Blau on 12/2/20.
-//
+// CLLocationCoordinate2D+Extensions.swift
+// Copyright (c) 2020 Joe Blau
 
 import CoreLocation
 

@@ -1,14 +1,10 @@
-//
-//  MKCoordinateSpan.swift
-//  Control
-//
-//  Created by Joe Blau on 12/2/20.
-//
+// MKCoordinateSpan+Extensions.swift
+// Copyright (c) 2020 Joe Blau
 
 import MapKit
 
 extension MKCoordinateSpan: Equatable {
     public static func == (a: MKCoordinateSpan, b: MKCoordinateSpan) -> Bool {
-        return a.latitudeDelta == b.latitudeDelta && a.longitudeDelta == b.longitudeDelta
+        a.latitudeDelta == b.latitudeDelta && a.longitudeDelta == b.longitudeDelta
     }
 }

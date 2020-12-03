@@ -1,8 +1,8 @@
 // Constant.swift
 // Copyright (c) 2020 Joe Blau
 
-import Foundation
 import Combine
+import Foundation
 
 struct Constant {
     static var xcrun: String = "/usr/bin/xcrun"

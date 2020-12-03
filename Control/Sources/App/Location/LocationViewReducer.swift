@@ -16,8 +16,8 @@ struct MyAnnotationItem: Identifiable, Equatable {
 
 struct LocationState: Equatable {
     var selectedDevice: Device? = nil
-    var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(),
-                                                        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    var region = MKCoordinateRegion(center: CLLocationCoordinate2D(),
+                                    span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     var annotationItems: [MyAnnotationItem] = []
 }
 
@@ -35,14 +35,14 @@ let locationReducer = Reducer<LocationState, LocationAction, AppEnvironment> { s
     case .removeAllAnnotations:
         state.annotationItems.removeAll()
         return .none
-        
+
     case let .addAnnotation(coordinate):
         switch state.selectedDevice?.udid {
-        case let  .some(udid):
+        case let .some(udid):
             let userInfo: [AnyHashable: Any] = [
                 "simulateLocationLatitude": coordinate.latitude,
                 "simulateLocationLongitude": coordinate.longitude,
-                "simulateLocationDevices": [udid]
+                "simulateLocationDevices": [udid],
             ]
 
             // An undocumented notification name to change the current simulator's location. From here: https://github.com/lyft/set-simulator-location
@@ -56,7 +56,6 @@ let locationReducer = Reducer<LocationState, LocationAction, AppEnvironment> { s
             state.annotationItems.append(MyAnnotationItem(coordinate: coordinate))
         case .none:
             break
-        
         }
         return .none
     }
