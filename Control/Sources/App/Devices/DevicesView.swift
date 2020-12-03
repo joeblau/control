@@ -67,7 +67,7 @@ struct DevicesView: View {
             Group {
                 switch viewStore.selectedSensor {
                 case .system: SystemView(store: appStore.scope(state: { $0.systemState }, action: { .systemAction($0) }))
-                case .apps: AppsView(store: appStore.scope(state: { $0.appsState }, action: { .appsAction($0) }))
+//                case .apps: AppsView(store: appStore.scope(state: { $0.appsState }, action: { .appsAction($0) }))
                 case .battery: BatteryView(store: appStore.scope(state: { $0.batteryState }, action: { .batteryAction($0) }))
                 case .location: LocationView(store: appStore.scope(state: { $0.locationState }, action: { .locationAction($0) }))
                 case .network: NetworkView(store: appStore.scope(state: { $0.networkState }, action: { .networkAction($0) }))

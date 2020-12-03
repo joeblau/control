@@ -12,7 +12,7 @@ enum Dashboard: String, Equatable, CaseIterable, Identifiable {
     var id: Self { self }
 
     case system = "gearshape"
-    case apps = "app.badge"
+//    case apps = "app.badge"
     case battery = "minus.plus.batteryblock"
     case location = "map"
     case network
